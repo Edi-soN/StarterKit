@@ -1,8 +1,0 @@
-package com.capgemini.java;
-
-public class Game {
-	
-	public Game(){
-		
-	}
-}

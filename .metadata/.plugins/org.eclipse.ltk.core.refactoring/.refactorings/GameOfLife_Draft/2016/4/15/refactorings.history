@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy 2 packages to &apos;GameOfLife/src&apos;&#x0D;&#x0A;- Original project: &apos;GameOfLife_Draft&apos;&#x0D;&#x0A;- Destination element: &apos;GameOfLife/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     GameOfLife_Draft/src/com.capgemini.test&#x0D;&#x0A;     GameOfLife_Draft/src/com.capgemini.java" description="Copy packages" destination="=GameOfLife/src" element1="/src&lt;com.capgemini.test" element2="/src&lt;com.capgemini.java" flags="589830" fragments="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1460704626170" version="1.0"/>
-</session>

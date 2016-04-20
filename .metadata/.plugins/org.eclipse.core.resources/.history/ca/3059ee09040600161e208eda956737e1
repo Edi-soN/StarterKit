@@ -1,7 +1,0 @@
-package com.capgemini.java;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class LastRound extends Round {
-}

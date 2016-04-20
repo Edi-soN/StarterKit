@@ -1,5 +1,0 @@
-package com.capgemini.java;
-
-public enum CardSetup {
-	ONEPAIR("2111", 1), TWOPAIR("", 2), THREEOFAKIND("", 3), STRAIGHT("", 4), FLUSH("", 6), FOUROFAKIND("", 7);
-}

@@ -1,9 +1,0 @@
-package com.capgemini.java;
-
-import java.util.LinkedList;
-import java.util.List;
-
-public class Round {
-	List<Roll> rolls = new LinkedList<>();
-	
-}

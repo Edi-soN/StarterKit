@@ -1,7 +1,0 @@
-package com.capgemini.java;
-
-public class Roll {
-	private int score = 0;
-	
-	
-}
