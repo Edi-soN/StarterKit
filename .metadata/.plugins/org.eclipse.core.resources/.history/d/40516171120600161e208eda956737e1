@@ -1,0 +1,33 @@
+package com.capgemini.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.capgemini.java.Game;
+
+public class BowlingTest {
+	
+	@Test
+	public void shouldReturnScoreZero(){
+		// given
+		Game game = new Game();
+		// when
+		int result = game.score();
+		// then
+		assertEquals(0,result);
+	}
+	
+	@Test
+	public void shouldReturnMaxScore(){
+		// given
+		Game game = new Game();
+		for(int i=0; i<9;i++){
+			game.roll(10);
+		}
+		// when
+		int result = game.score();
+		// then
+		assertEquals(3000,result);
+	}
+}

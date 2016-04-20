@@ -1,0 +1,60 @@
+import java.util.ArrayList;
+import java.util.List;
+
+import com.capgemini.coins.Coins;
+import com.capgemini.fibonacci.Fibonacci;
+import com.capgemini.pascalrectangle.PascalRectangle;
+import com.capgemini.placeToSplit.PlaceToSplit;
+import com.capgemini.pythagorean.Pythagorean;
+
+@SuppressWarnings("unused")
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// Coins
+		/*
+		List<Integer> coins = new ArrayList<Integer>();
+		coins.add(1);
+		coins.add(1);
+		coins.add(1);
+		coins.add(1);
+		coins.add(1);
+		coins.add(0);
+		
+		System.out.println(Coins.solution(coins));
+		*/
+		
+		// Fibonacci
+		// Check first 10 numbers
+		/*
+		for(int i=1; i<11;i++)
+		{
+			System.out.println("Fibonacci for n = " + i + " equals: " + Fibonacci.fib(i));
+		}
+		// Check negative number
+		System.out.println(Fibonacci.fib(-1));
+		*/
+		
+		// Pascal Triangle
+		/*
+		System.out.println(PascalRectangle.pascal(4, 9));
+		*/
+		
+		// Place to split
+		/*
+		int[] myArray = {1, 1, 1, 1};
+		System.out.println(PlaceToSplit.canBalance(myArray));
+		*/
+		
+		// Pythagorean
+		/*
+		Pythagorean.triplet();
+		*/
+		
+		// Node & NodeValidators
+		//List<Integer> nodes = new ArrayList<Node>();
+	}
+
+}

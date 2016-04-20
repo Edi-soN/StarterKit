@@ -1,0 +1,10 @@
+package com.capgemini.java;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Poker {
+	private List<Card> cardList = new ArrayList<>();
+	
+	
+}

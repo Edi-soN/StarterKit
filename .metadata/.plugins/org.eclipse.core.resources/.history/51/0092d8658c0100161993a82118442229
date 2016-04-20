@@ -1,0 +1,54 @@
+package com.capgemini.java;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Game {
+	private int searchedCellPositionX = 0;
+	private int searchedCellPositionY = 0;
+	private List<Cell> sourceGeneration = new ArrayList<>();
+	
+	public Game(int cellPositionX, int cellPositionY, List<Cell> currentGeneration){
+		this.searchedCellPositionX = cellPositionX;
+		this.searchedCellPositionY = cellPositionY;
+		this.sourceGeneration = currentGeneration;
+	}
+	
+	public int isCellAliveInNextGeneration(int cellPositionX, int cellPositionY, List<Cell> currentGeneration) {
+		int numberOfAliveNeighbors = countAliveNeighbors(cellPositionX, cellPositionY, currentGeneration);
+		boolean cellAlive = isCellAlive(cellPositionX, cellPositionY, currentGeneration) == 1 ? true : false;
+
+		if (cellAlive && numberOfAliveNeighbors < 2 || cellAlive && numberOfAliveNeighbors > 3
+				|| !cellAlive && numberOfAliveNeighbors != 3) {
+			return 0;
+		}
+		return 1;
+	}
+
+	private int isCellAlive(int cellPositionX, int cellPositionY, List<Cell> generation) {
+		for(Cell cell : generation){
+			if(cell.getPositionX() == cellPositionX && cell.getPositionY() == cellPositionY){
+				return cell.getLife();
+			}
+		}
+		return 0;
+	}
+
+	private int countAliveNeighbors(int cellPositionX, int cellPositionY, List<Cell> generation) {
+		int counter = 0;
+		for (Cell cell : generation) {
+			int cX = cell.getPositionX();
+			int cY = cell.getPositionY();
+			if (cellPositionX == cX && cellPositionY - 1 == cY || cellPositionX == cX && cellPositionY + 1 == cY
+					|| cellPositionX - 1 == cX && cellPositionY - 1 == cY
+					|| cellPositionX - 1 == cX && cellPositionY == cY
+					|| cellPositionX - 1 == cX && cellPositionY + 1 == cY
+					|| cellPositionX + 1 == cX && cellPositionY - 1 == cY
+					|| cellPositionX + 1 == cX && cellPositionY == cY
+					|| cellPositionX + 1 == cX && cellPositionY + 1 == cY) {
+				counter += cell.getLife();
+			}
+		}
+		return counter;
+	}
+}

@@ -1,0 +1,64 @@
+package com.capgemini.java;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Round {
+	protected List<Roll> rolls = new ArrayList<>();
+	protected Round nextRound;
+	private boolean isStrike = false;
+	private boolean isSpare = false;
+
+	public void addRoll(int numberOfPins) {
+		if(rolls.get(0).getScore()+numberOfPins>10){
+			throw new IllegalArgumentException("Illegal number of pins");
+		}
+		rolls.add(new Roll(numberOfPins));
+	}
+
+	public int getScore() {
+		updateBonus();
+		int score = 0;
+		for (Roll singleRoll : rolls) {
+			score += singleRoll.getScore() + getBonusPoints();
+		}
+		return score;
+	}
+
+	private void updateBonus() {
+		if (rolls.get(0).getScore() == 10) {
+			this.isStrike = true;
+		}
+		if (rolls.size() == 2 && rolls.get(0).getScore() + rolls.get(1).getScore() == 10) {
+			this.isSpare = true;
+		}
+	}
+
+	private int getBonusPoints() {
+		if (nextRound != null) {
+			if (isStrike) {
+				int bonusScore;
+				if (nextRound.rolls.size() == 1 && nextRound.nextRound == null) {
+					bonusScore = nextRound.rolls.get(0).getScore();
+				} else if (nextRound.rolls.size() == 1 && nextRound.nextRound != null) {
+					bonusScore = nextRound.rolls.get(0).getScore() + nextRound.nextRound.rolls.get(0).getScore();
+				} else {
+					bonusScore = nextRound.rolls.get(0).getScore() + nextRound.rolls.get(1).getScore();
+				}
+				return bonusScore;
+			}
+			if (isSpare) {
+				return nextRound.rolls.get(0).getScore();
+			}
+		}
+		return 0;
+	}
+
+	public void setNextRound(Round nextRound) {
+		this.nextRound = nextRound;
+	}
+
+	public boolean isFinished() {
+		return rolls.get(0).getScore() == 10 || rolls.size() == 2;
+	}
+}

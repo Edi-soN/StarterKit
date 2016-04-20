@@ -1,0 +1,25 @@
+package com.capgemini.java;
+
+public class Cell {
+	private int positionX = 0;
+	private int positionY = 0;
+	private int life = 0;
+
+	public Cell(int positionX, int positionY, int life) {
+		this.positionX = positionX;
+		this.positionY = positionY;
+		this.life = life;
+	}
+
+	public int getPositionX() {
+		return this.positionX;
+	}
+
+	public int getPositionY() {
+		return this.positionY;
+	}
+
+	public int getLife() {
+		return this.life;
+	}
+}

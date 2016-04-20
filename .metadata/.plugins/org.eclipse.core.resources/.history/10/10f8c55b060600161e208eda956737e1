@@ -1,0 +1,25 @@
+package com.capgemini.java;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Round {
+	private List<Roll> rolls = new ArrayList<>();
+
+	public void addRoll(int numberOfPins) {
+		rolls.add(new Roll(numberOfPins));
+	}
+
+	public int getScore() {
+		int totalScore = 0;
+		for (Roll singleRoll : rolls) {
+			totalScore += singleRoll.getScore() + bonus.getBonusPoints();
+		}
+		return totalScore;
+	}
+
+	public boolean isFinished() {
+		return rolls.get(0).getScore() == 10 || rolls.size() == 2;
+	}
+}

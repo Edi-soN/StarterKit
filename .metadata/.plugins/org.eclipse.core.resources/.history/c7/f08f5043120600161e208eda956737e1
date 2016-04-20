@@ -1,0 +1,10 @@
+package com.capgemini.java;
+
+public class LastRound extends Round {
+
+	@Override
+	public boolean isFinished() {
+		return (rolls.get(0).getScore() + rolls.get(1).getScore()) < 10 || rolls.size() == 3;
+	}
+
+}

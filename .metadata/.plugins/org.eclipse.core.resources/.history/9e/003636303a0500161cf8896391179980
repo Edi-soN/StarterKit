@@ -1,0 +1,13 @@
+package com.capgemini.java;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class CardValidator {
+	private Map<String,Integer> validCard = new HashMap<>();
+	private static final int NUMBER_OF_SIGNS_IN_LINE = 20;
+	
+	public String clearLineFromWhiteSpace(String line){
+		return line.replaceAll("\\s+","");
+	}
+}

@@ -1,0 +1,19 @@
+package com.capgemini.java;
+
+import java.util.List;
+
+public class Game {
+
+	public Game(List<Cell> cellList) {
+		addCellsToGrid(cellList);
+	}
+
+	public Game(int cellBoardWidth, int cellBoardHeight) {
+
+	}
+
+	private void addCellsToGrid(List<Cell> cellList) {
+		// TODO Auto-generated method stub
+
+	}
+}

@@ -1,0 +1,28 @@
+package com.capgemini.java;
+
+public class Cell {
+	private Point cellPosition = new Point(0,0);
+	private boolean cellState = CellState.DEAD.getValue();
+
+	public Cell(int positionX, int positionY, boolean cellState) {
+		this.cellPosition.setX(positionX);
+		this.cellPosition.setY(positionX);
+		this.cellState = cellState;
+	}
+
+	public int getPositionX() {
+		return this.cellPosition.getX();
+	}
+
+	public int getPositionY() {
+		return this.cellPosition.getY();
+	}
+
+	public boolean getCellState(){
+		return this.cellState;
+	}
+	
+	public void setCellState(boolean state){
+		this.cellState = state;
+	}
+}

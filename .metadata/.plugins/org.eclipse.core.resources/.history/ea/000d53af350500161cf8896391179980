@@ -1,0 +1,67 @@
+package com.capgemini.test;
+
+import static org.junit.Assert.*;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.Test;
+
+import com.capgemini.java.Cell;
+import com.capgemini.java.Game;
+
+public class GameTest {
+	private static final boolean DEAD = false;
+	private static final boolean ALIVE = true;
+	private Point cellPosition = new Point(1, 1);
+	private Cell[][] cellGrid = new Cell[][] {
+		  { new Cell(0, 0, DEAD), new Cell(0, 1, DEAD), new Cell(0, 2, DEAD),
+			new Cell(1, 0, DEAD), new Cell(1, 1, ALIVE), new Cell(1, 2, ALIVE), 
+			new Cell(2, 0, DEAD), new Cell(2, 1, DEAD), new Cell(2, 2, DEAD)},
+		  { new Cell(0, 0, ALIVE), new Cell(0, 1, ALIVE), new Cell(0, 2, ALIVE),
+			new Cell(1, 0, ALIVE), new Cell(1, 1, ALIVE), new Cell(1, 2, ALIVE), 
+			new Cell(2, 0, ALIVE), new Cell(2, 1, ALIVE), new Cell(2, 2, ALIVE)},
+		  { new Cell(0, 0, DEAD), new Cell(0, 1, DEAD), new Cell(0, 2, DEAD),
+			new Cell(1, 0, DEAD), new Cell(1, 1, ALIVE), new Cell(1, 2, ALIVE), 
+			new Cell(2, 0, DEAD), new Cell(2, 1, DEAD), new Cell(2, 2, ALIVE)},
+		  { new Cell(0, 0, DEAD), new Cell(0, 1, DEAD), new Cell(0, 2, ALIVE),
+			new Cell(1, 0, DEAD), new Cell(1, 1, ALIVE), new Cell(1, 2, ALIVE), 
+			new Cell(2, 0, DEAD), new Cell(2, 1, DEAD), new Cell(2, 2, ALIVE)},
+		  { new Cell(0, 0, DEAD), new Cell(0, 1, DEAD), new Cell(0, 2, ALIVE),
+			new Cell(1, 0, DEAD), new Cell(1, 1, DEAD), new Cell(1, 2, ALIVE), 
+			new Cell(2, 0, DEAD), new Cell(2, 1, DEAD), new Cell(2, 2, ALIVE)}
+	};
+
+	private boolean calculateCellStateInNextGeneration(Point cellPosition, Cell[] cellGrid){
+		Game game = new Game(new ArrayList<>(Arrays.asList(cellGrid)));
+		game.calculateNextGeneration();
+		return game.getCellMap().get(cellPosition).getCellState();
+	}
+	
+	@Test
+	public void shouldReturnFalseForAliveCellWithLessThanTwoNeighbors() {
+		assertFalse(calculateCellStateInNextGeneration(cellPosition,cellGrid[0]));
+	}
+
+	@Test
+	public void shouldReturnFalseForAliveCellWithMoreThanThreeNeighbors() {
+		assertFalse(calculateCellStateInNextGeneration(cellPosition,cellGrid[1]));
+	}
+
+	@Test
+	public void shouldReturnTrueForAliveCellWithTwoNeighbors() {
+		assertTrue(calculateCellStateInNextGeneration(cellPosition,cellGrid[2]));
+	}
+
+	@Test
+	public void shouldReturnTrueForAliveCellWithThreeNeighbors() {
+		assertTrue(calculateCellStateInNextGeneration(cellPosition,cellGrid[3]));
+	}
+
+	@Test
+	public void shouldReturnTrueForDeadCellWithThreeNeighbors() {
+		assertTrue(calculateCellStateInNextGeneration(cellPosition,cellGrid[4]));
+	}
+}

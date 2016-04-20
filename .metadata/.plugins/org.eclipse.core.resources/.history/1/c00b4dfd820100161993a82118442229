@@ -1,0 +1,13 @@
+package com.capgemini.java;
+
+public class Cell {
+	private int life = 0;
+
+	public Cell(int life) {
+		this.life = life;
+	}
+
+	public int getLife() {
+		return this.life;
+	}
+}

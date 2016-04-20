@@ -1,0 +1,23 @@
+package com.capgemini.java;
+
+public class Cell {
+	private int positionX=0;
+	private int positionY=0;
+	private int numberOfAliveNeighbors=0;
+	private int life=0;
+	
+	public Cell(int positionX, int positionY, int life){
+		this.positionX = positionX;
+		this.positionY = positionY;
+		this.life = life;
+		this.numberOfAliveNeighbors = 0;
+	}
+	
+	public void setLife(int life){
+		this.life = life;
+	}
+	
+	public void setNumberOfAliveNeighbors(int numberOfAliveNeighbors){
+		this.numberOfAliveNeighbors = numberOfAliveNeighbors;
+	}
+}

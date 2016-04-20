@@ -1,0 +1,40 @@
+package com.capgemini.java;
+
+import java.awt.Point;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Game {
+	private Map<Point,Cell> cellMap = new HashMap<>();
+	
+	public Game(List<Cell> cellList) {
+		for(Cell cell : cellList){
+			cellMap.put(cell.getCellPosition(), cell);
+		}
+		addNeighboursPositions();
+	}
+
+	public Game(int cellBoardWidth, int cellBoardHeight) {
+		// TODO
+	}
+
+	private void addNeighboursPositions() {
+		//int[][] offsets = new int[][] {};
+		for(Entry<Point,Cell> entry : cellMap.entrySet()){
+			
+		}
+	}
+
+	private List<Point> calculateNeigboursPositions(Cell cell, List<Cell> cellList) {
+		
+		return null;
+	}
+	
+	public boolean isCellAliveInNextGeneration(Point cellPosition){
+		//if (cellMap.get(cellPosition).
+		return false;
+	}
+	
+}

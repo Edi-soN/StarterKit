@@ -1,0 +1,47 @@
+package com.capgemini.java;
+
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Hand implements Comparable<Hand> {
+	private Map<CardValue, Integer> hand = new TreeMap<>();
+	private boolean isColor;
+
+	public void addCardsToHand(List<Card> cardList) {
+		checkCardsColor(cardList);
+		for (Card card : cardList) {
+			int cardValueCounter = 0;
+			if (hand.get(card.getCardValue()) != null) {
+				cardValueCounter = hand.get(card.getCardValue());
+			}
+			hand.put(card.getCardValue(), 1 + cardValueCounter);
+		}
+	}
+
+	private void checkCardsColor(List<Card> cardList) {
+		boolean allCardsOneColor = true;
+		String firstCardColor = "";
+		for (Card card : cardList) {
+			if (firstCardColor.isEmpty()) {
+				firstCardColor = card.getCardColor();
+			}
+			if (card.getCardColor() != firstCardColor) {
+				allCardsOneColor = false;
+			}
+		}
+		this.isColor = allCardsOneColor;
+	}
+
+	public int calculateSetupValue() {
+		
+		return 0;
+	}
+
+	@Override
+	public int compareTo(Hand arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

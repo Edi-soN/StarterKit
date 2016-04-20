@@ -1,0 +1,68 @@
+package com.capgemini.java;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Hand implements Comparable<Hand> {
+	private boolean isColor;
+	private Map<Integer, Integer> hand = new TreeMap<>(Collections.reverseOrder());
+
+	public void addCardsToHand(List<Card> cardList) {
+		checkCardsColor(cardList);
+		for (Card card : cardList) {
+			int cardValueCounter = 0;
+			if (hand.get(card.getCardValue().getValue()) != null) {
+				cardValueCounter = hand.get(card.getCardValue().getValue());
+			}
+			hand.put(card.getCardValue().getValue(), 1 + cardValueCounter);
+		}
+		sortCards();
+	}
+
+	private void checkCardsColor(List<Card> cardList) {
+		boolean allCardsOneColor = true;
+		String firstCardColor = "";
+		for (Card card : cardList) {
+			if (firstCardColor.isEmpty()) {
+				firstCardColor = card.getCardColor();
+			}
+			if (card.getCardColor() != firstCardColor) {
+				allCardsOneColor = false;
+			}
+		}
+		this.isColor = allCardsOneColor;
+	}
+
+	public int calculateSetupValue() {
+		return 0;
+	}
+
+	private void sortCards() {
+		List<Map.Entry<Integer, Integer>> list = new ArrayList<Map.Entry<Integer, Integer>>(hand.entrySet());
+		Collections.sort(list, new sortByCardQuantityThenByCardValue<Integer, Integer>());
+	}
+
+	@Override
+	public int compareTo(Hand arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public class ValueThenKeyComparator<K extends Comparable<? super K>, V extends Comparable<? super V>>
+			implements Comparator<Map.Entry<K, V>> {
+
+		public int compare(Map.Entry<K, V> a, Map.Entry<K, V> b) {
+			int cmp1 = a.getValue().compareTo(b.getValue());
+			if (cmp1 != 0) {
+				return cmp1;
+			} else {
+				return a.getKey().compareTo(b.getKey());
+			}
+		}
+
+	}
+
+}

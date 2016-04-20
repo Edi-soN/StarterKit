@@ -1,0 +1,94 @@
+package com.capgemini.test;
+
+import static org.junit.Assert.*;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.Test;
+
+import com.capgemini.java.Cell;
+import com.capgemini.java.Game;
+
+public class GameTest {
+	boolean dead = false;
+	boolean live = true;
+	Point cellPosition = new Point(1, 1);
+
+	@Test
+	public void shouldReturnFalseForAliveCellWithLessThanTwoNeighbors() {
+		// given
+		Cell[] cells = new Cell[] { new Cell(0, 0, dead), new Cell(0, 1, dead), new Cell(0, 2, dead),
+									new Cell(1, 0, dead), new Cell(1, 1, live), new Cell(1, 2, live), 
+									new Cell(2, 0, dead), new Cell(2, 1, dead), new Cell(2, 2, dead)};
+		List<Cell> cellList = new ArrayList<>(Arrays.asList(cells));
+		Game game = new Game(cellList);
+		game.calculateNextGeneration();
+		// when
+		boolean result = game.getCellMap().get(cellPosition).getCellState();
+		// then
+		assertFalse(result);
+	}
+
+	@Test
+	public void shouldReturnFalseForAliveCellWithMoreThanThreeNeighbors() {
+		// given
+		Cell[] cells = new Cell[] { new Cell(0, 0, live), new Cell(0, 1, live), new Cell(0, 2, live),
+									new Cell(1, 0, live), new Cell(1, 1, live), new Cell(1, 2, live), 
+									new Cell(2, 0, live), new Cell(2, 1, live), new Cell(2, 2, live)};
+		List<Cell> cellList = new ArrayList<>(Arrays.asList(cells));
+		Game game = new Game(cellList);
+		game.calculateNextGeneration();
+		// when
+		boolean result = game.getCellMap().get(cellPosition).getCellState();
+		// then
+		assertFalse(result);
+	}
+
+	@Test
+	public void shouldReturnTrueForAliveCellWithTwoNeighbors() {
+		// given
+		Cell[] cells = new Cell[] { new Cell(0, 0, dead), new Cell(0, 1, dead), new Cell(0, 2, dead),
+									new Cell(1, 0, dead), new Cell(1, 1, live), new Cell(1, 2, live), 
+									new Cell(2, 0, dead), new Cell(2, 1, dead), new Cell(2, 2, live)};
+		List<Cell> cellList = new ArrayList<>(Arrays.asList(cells));
+		Game game = new Game(cellList);
+		game.calculateNextGeneration();
+		// when
+		boolean result = game.getCellMap().get(cellPosition).getCellState();
+		// then
+		assertTrue(result);
+	}
+
+	@Test
+	public void shouldReturnTrueForAliveCellWithThreeNeighbors() {
+		// given
+		Cell[] cells = new Cell[] { new Cell(0, 0, dead), new Cell(0, 1, dead), new Cell(0, 2, live),
+									new Cell(1, 0, dead), new Cell(1, 1, live), new Cell(1, 2, live), 
+									new Cell(2, 0, dead), new Cell(2, 1, dead), new Cell(2, 2, live)};
+		List<Cell> cellList = new ArrayList<>(Arrays.asList(cells));
+		Game game = new Game(cellList);
+		game.calculateNextGeneration();
+		// when
+		boolean result = game.getCellMap().get(cellPosition).getCellState();
+		// then
+		assertTrue(result);
+	}
+
+	@Test
+	public void shouldReturnTrueForDeadCellWithThreeNeighbors() {
+		// given
+		Cell[] cells = new Cell[] { new Cell(0, 0, dead), new Cell(0, 1, dead), new Cell(0, 2, live),
+				new Cell(1, 0, dead), new Cell(1, 1, dead), new Cell(1, 2, live), new Cell(2, 0, dead),
+				new Cell(2, 1, dead), new Cell(2, 2, live) };
+		List<Cell> cellList = new ArrayList<>(Arrays.asList(cells));
+		Game game = new Game(cellList);
+		game.calculateNextGeneration();
+		// when
+		boolean result = game.getCellMap().get(cellPosition).getCellState();
+		// then
+		assertTrue(result);
+	}
+}

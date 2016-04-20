@@ -1,0 +1,36 @@
+package com.capgemini.java;
+
+import java.util.List;
+
+public class Poker {
+	private Converter convertedCardList = new Converter();
+	private List<Card> cardList = convertedCardList.convertRawDataToCards();
+	private int playerOneWinsCounter = 0;
+
+	public int calculateNumberOfPlayerOneWins() {
+		for (int i = 0; i < cardList.size(); i += 10) {
+			Hand firstPlayer = new Hand();
+			Hand secondPlayer = new Hand();
+			firstPlayer.addCardsToHand(cardList.subList(i, i + 5));
+			secondPlayer.addCardsToHand(cardList.subList(i + 5, i + 10));
+			if (firstPlayer.compareTo(secondPlayer) == 1) {
+				playerOneWinsCounter++;
+			}
+		}
+		return playerOneWinsCounter;
+	}
+
+	public int calculateNumberOfPlayerOneWins(List<Card> givenListOfCards) {
+		cardList = givenListOfCards;
+		for (int i = 0; i < cardList.size(); i += 10) {
+			Hand firstPlayer = new Hand();
+			Hand secondPlayer = new Hand();
+			firstPlayer.addCardsToHand(cardList.subList(i, i + 5));
+			secondPlayer.addCardsToHand(cardList.subList(i + 5, i + 10));
+			if (firstPlayer.compareTo(secondPlayer) == 1) {
+				playerOneWinsCounter++;
+			}
+		}
+		return playerOneWinsCounter;
+	}
+}

@@ -1,0 +1,16 @@
+package com.capgemini.java;
+
+public enum CardValue {
+	A(14), K(13), Q(12), J(11);
+	
+	private int value = 0;
+	
+	CardValue(int value){
+		this.value = value;
+	}
+	
+	public int getValue(){
+		return this.value;
+	}
+
+}

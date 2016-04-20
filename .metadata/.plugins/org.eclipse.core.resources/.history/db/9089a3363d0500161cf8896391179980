@@ -1,0 +1,56 @@
+package com.capgemini.java;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class Converter {
+
+	private final static Logger logger = LogManager.getLogger(Converter.class);
+	private final static String FILE_NAME = "C:\\Users\\ADDZIEDZ\\workspace\\PokerGame\\poker.txt";
+	private List<Card> cardList = new ArrayList<>();
+
+	public List<Card> convertRawDataToCards() {
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME));
+			String line = reader.readLine();
+			while (line != null) {
+				convertSingleLine(line);
+				line = reader.readLine();
+			}
+			reader.close();
+		} catch (IOException e) {
+			logger.error("Error reading file");
+		}
+		return cardList;
+	}
+
+	private void convertSingleLine(String line) {
+		CardValidator cv = new CardValidator();
+		cv.clearLineFromWhiteSpaces(line);
+		int cardCounter = 0;
+		for (int i = 0; i < line.length(); i += 2) {
+			int cardValue = checkCardValue(line.substring(i, i + 1));
+			String cardColor = line.substring(i + 1, i + 2);
+			cardList.add(new Card(cardValue, cardColor));
+			i += 2;
+			cardCounter++;
+		}
+	}
+
+	private int checkCardValue(String cardValue) {
+		return CardValue.getEnum(cardValue).getValue();
+	}
+
+	private boolean validateCard(String line) {
+		i + 1 < line.length() && line.substring(i, i + 1).matches("[AKQJT98765432]")
+		&& line.substring(i + 1, i + 2).matches("[CSHD]")
+		return false;
+	}
+
+}

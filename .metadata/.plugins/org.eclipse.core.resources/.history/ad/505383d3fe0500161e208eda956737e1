@@ -1,0 +1,31 @@
+package com.capgemini.java;
+
+public enum CardSetup {
+	ONEPAIR("2111", 1), TWOPAIR("221", 2), THREEOFAKIND("311", 3), FULLHOUSE("32", 6), FOUROFAKIND("41", 7);
+
+	private final String signature;
+	private final int valsetupValue;
+
+	CardSetup(String signature, int valsetupValue) {
+		this.signature = signature;
+		this.valsetupValue = valsetupValue;
+	}
+
+	public int getSetupValue() {
+		return this.valsetupValue;
+	}
+
+	public String getSignature() {
+		return this.signature;
+	}
+
+	public static CardSetup getEnum(String signature) {
+		for (CardSetup enumCardSetup : values()) {
+			if (enumCardSetup.getSignature().equalsIgnoreCase(signature)) {
+				return enumCardSetup;
+			}
+		}
+
+		throw new IllegalArgumentException();
+	}
+}

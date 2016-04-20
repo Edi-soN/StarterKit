@@ -1,0 +1,13 @@
+package com.capgemini.java;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Poker {
+	private Converter convertedCardList = new Converter();
+	private List<Card> cardList = convertedCardList.convertRawDataToCards();
+	
+	public int calculateNumberOfPlayerOneWins(){
+		return 0;
+	}
+}

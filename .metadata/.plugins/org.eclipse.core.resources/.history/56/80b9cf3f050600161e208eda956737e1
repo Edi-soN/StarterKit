@@ -1,0 +1,29 @@
+package com.capgemini.java;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Game implements BowlingGameResultCalculator {
+	private List<Round> rounds = new LinkedList<>();
+	
+	@Override
+	public void roll(int numberOfPins) {
+		if(!isFinished()){
+			
+		}
+	}
+
+	@Override
+	public boolean isFinished() {
+		return rounds.size() == 10 && rounds.get(9).isFinished();
+	}
+
+	@Override
+	public int score() {
+		int score = 0;
+		for(Round singleRound : rounds){
+			score += singleRound.getScore();
+		}
+		return score;
+	}
+}

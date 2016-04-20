@@ -1,0 +1,24 @@
+package com.capgemini.java;
+
+import java.util.List;
+
+public class Game {
+
+	public static int isCellAliveInNextGeneration(List<Cell> currentGeneration) {
+		int numberOfAliveNeighbors = 0;
+
+		for (int i = 0; i < currentGeneration.size(); i++) {
+			if (i != 4) {
+				numberOfAliveNeighbors += currentGeneration.get(i).getLife();
+			}
+		}
+
+		boolean cellIsAlive = 1 == currentGeneration.get(4).getLife();
+
+		if (cellIsAlive && numberOfAliveNeighbors < 2 || cellIsAlive && numberOfAliveNeighbors > 3
+				|| !cellIsAlive && numberOfAliveNeighbors != 3) {
+			return 0;
+		}
+		return 1;
+	}
+}

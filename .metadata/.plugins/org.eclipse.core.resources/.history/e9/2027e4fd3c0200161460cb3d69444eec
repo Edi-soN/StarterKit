@@ -1,0 +1,28 @@
+package com.capgemini.test;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.Test;
+
+import com.capgemini.java.Card;
+import com.capgemini.java.Converter;
+
+public class PokerTest {
+	@Test
+	public void shouldReturnCardValueOfEight() {
+		// given
+		Converter conv = new Converter();
+		List<Card> cardList = conv.convertRawDataToCards();
+		// when
+		int result = cardList.get(0).getCardValue();
+		// then
+		assertEquals(8, result);
+	}
+	
+	@Test
+	public void shouldReturnZeroForHighCard(){
+		// given
+	}
+}

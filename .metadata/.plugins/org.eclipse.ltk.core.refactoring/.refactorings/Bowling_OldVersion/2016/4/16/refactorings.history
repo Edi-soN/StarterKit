@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;BowlingGameResultCalculator.java&apos; to &apos;Bowling/src/com.capgemini.java&apos;&#x0D;&#x0A;- Original project: &apos;Bowling_OldVersion&apos;&#x0D;&#x0A;- Destination element: &apos;Bowling/src/com.capgemini.java&apos;&#x0D;&#x0A;- Original element: &apos;com.capgemini.java.BowlingGameResultCalculator.java&apos;" description="Copy compilation unit" destination="=Bowling/src&lt;com.capgemini.java" element1="/src&lt;com.capgemini.java{BowlingGameResultCalculator.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1461020729810" units="1" version="1.0"/>
+</session>

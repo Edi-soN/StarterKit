@@ -1,0 +1,10 @@
+package com.capgemini.test;
+
+import org.junit.Test;
+
+public class PokerTest {
+	@Test
+	public void shouldReturnZero(){
+		// given
+	}
+}

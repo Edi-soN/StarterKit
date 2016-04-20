@@ -1,0 +1,52 @@
+package com.capgemini.test;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+
+import com.capgemini.java.Cell;
+import com.capgemini.java.Game;
+
+public class GameTest {
+	@Test
+	public void shouldReturnZeroForAliveCellWithLessThanTwoNeighbors() {
+		// given
+		List<Cell> cellList = new ArrayList<>();
+		cellList.add(new Cell(0,0,false));
+		cellList.add(new Cell(0,1,false));
+		cellList.add(new Cell(0,2,false));
+		cellList.add(new Cell(1,0,false));
+		cellList.add(new Cell(1,1,true));
+		cellList.add(new Cell(1,2,true));
+		cellList.add(new Cell(2,0,false));
+		cellList.add(new Cell(2,1,false));
+		cellList.add(new Cell(2,2,false));
+		// when
+		int result = Game.isCellAliveInNextGeneration(cellList);
+		// then
+		assertEquals(0, result);
+	}
+	
+	@Test
+	public void shouldReturnZeroForAliveCellWithMoreThanThreeNeighbors() {
+		// given
+		List<Cell> cellList = new ArrayList<>();
+		// when
+		int result = Game.isCellAliveInNextGeneration(cellList);
+		// then
+		assertEquals(0, result);
+	}
+	
+	@Test
+	public void shouldReturnOneForAliveCellWithTwoOrThreeNeighbors() {
+		// given
+		List<Cell> cellList = new ArrayList<>();
+		// when
+		int result = Game.isCellAliveInNextGeneration(cellList);
+		// then
+		assertEquals(1, result);
+	}
+}

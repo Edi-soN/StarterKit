@@ -1,0 +1,23 @@
+package com.capgemini.java;
+
+public class LastRound extends Round {
+
+	@Override
+	public boolean isFinished() {
+		return (rolls.size() == 2 && (rolls.get(0).getScore() + rolls.get(1).getScore()) < 10) || rolls.size() == 3;
+	}
+
+	@Override
+	public void addRoll(int numberOfPins) {
+		
+	}
+
+	@Override
+	public int getScore() {
+		int score = 0;
+		for (Roll singleRoll : rolls) {
+			score += singleRoll.getScore();
+		}
+		return score;
+	}
+}

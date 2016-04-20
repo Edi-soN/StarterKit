@@ -1,0 +1,4 @@
+package com.capgemini.java;
+
+public class LastRound extends Round {
+}
