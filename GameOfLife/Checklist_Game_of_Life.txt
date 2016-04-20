@@ -1,0 +1,7 @@
+Checklist:
+
+1. Zyjaca komorka, ktora ma mniej niz dwoch sasiadow => return false.
+2. Zyjaca komorka, ktora ma dwoch sasiadow => return true.
+3. Zyjaca komorka, ktora ma trzech sasiadow => return true.
+4. Zyjaca komorka, ktora ma wiecej niz trzech sasiadow => return false.
+5. Martwa komorka, ktora ma dokladnie trzech zywych sasiadow => return true.

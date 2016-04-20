@@ -1,0 +1,21 @@
+Checklist Bowling:
+
+01. Before first roll => game.score() == 0
+02. Before first roll => game.isFinished() == false 
+03. After last roll => game.isFinished() == true
+04. For all rolls equal zero => game.score() == 0
+05. For roll with negative number of pins => throws an exception
+06. For roll over 10 pins => throws an exception
+07. For rolls 5, 6 => throws an exception
+08. For all rolls equal 10 => game.score() == 300
+09. For all rolls equal 1 => game.score() == 20
+10. For rolls 10, 5 => game.score() == 20
+11. For roll 10 => game.score() == 10
+12. For roll 5 => game.score() == 5
+13. For rolls 2,8, 1 => game.score() = 12
+14. For rolls 5, 0, 6 => game.score() == 11
+15. For rolls 10, 10 => game.score() == 30
+16. For rolls 10, 10, 1 => game.score() == 33
+17. For rolls 10, 3, 7, 1 => game.score() == 32
+18. For rolls 10, 9, 1, 5, 5, 7, 2, 10, 10, 10, 9, 0, 8, 2, 9, 1, 10 => game.score() == 187
+

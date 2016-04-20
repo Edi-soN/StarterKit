@@ -1,0 +1,15 @@
+Checklist Poker:
+
+Testing reading from file and converting
+01. For "8C" => return 8
+02. For "TS" => return 10
+
+
+Testing setup calculations (returns number of first player wins)
+
+1) User input
+03. For "2S, 2D, 7C, 9H, 10H" vs "5S, 5D, 5C, 9H, 10H" => return 0
+04. For "2S, 2D, 2C, 2H, 10H" vs "5S, 5D, 5C, 9H, 10H" => return 1
+
+2) From file (1000 random poker deals)
+05. For given set of cards => return 376
