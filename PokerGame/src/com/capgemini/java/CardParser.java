@@ -9,7 +9,7 @@ import java.util.List;
  * @author ADDZIEDZ
  *
  */
-public class CardValidator {
+public class CardParser {
 	private static final int NUMBER_OF_SIGNS_IN_LINE = 20;
 	private String lineOfCards = "";
 	private List<String[]> cardList = new ArrayList<>();

@@ -19,28 +19,13 @@ public class Game implements BowlingGameResultCalculator {
 	 * 
 	 * @param numberOfPins
 	 *            number of knocked down pins
+	 * @throws BowlingException
 	 */
 	@Override
-	public void roll(int numberOfPins) {
-		if (isFinished()) {
-			throw new UnsupportedOperationException("Game is Finished");
-		}
-		if (numberOfPins < 0 || numberOfPins > 10) {
-			throw new IllegalArgumentException("Illegal number of pins");
-		}
-		if (!rounds.isEmpty() && !rounds.get(rounds.size() - 1).isFinished()) {
-			rounds.get(rounds.size() - 1).addRoll(numberOfPins);
-		} else {
-			if (rounds.size() == 9) {
-				rounds.add(new LastRound());
-			} else {
-				rounds.add(new Round());
-			}
-			if (rounds.size() > 1) {
-				rounds.get(rounds.size() - 2).assignNextRound(rounds.get(rounds.size() - 1));
-			}
-			rounds.get(rounds.size() - 1).addRoll(numberOfPins);
-		}
+	public void roll(int numberOfPins) throws BowlingException {
+		checkIfCanRoll(numberOfPins);
+		Round r = getPlayedRound();
+		r.addRoll(numberOfPins);
 	}
 
 	/**
@@ -61,5 +46,27 @@ public class Game implements BowlingGameResultCalculator {
 			score += singleRound.calculateScore();
 		}
 		return score;
+	}
+
+	private void checkIfCanRoll(int numberOfPins) throws BowlingException {
+		if (isFinished()) {
+			throw new BowlingException("Game is Finished");
+		}
+		if (numberOfPins < 0 || numberOfPins > 10) {
+			throw new BowlingException("Illegal number of pins");
+		}
+	}
+
+	private Round getPlayedRound() throws BowlingException {
+		if (rounds.isEmpty() || (rounds.get(rounds.size() - 1).isFinished() && rounds.size() != 9)) {
+			rounds.add(new Round());
+		}
+		if (rounds.get(rounds.size() - 1).isFinished() && rounds.size() == 9) {
+			rounds.add(new LastRound());
+		}
+		if (rounds.size() > 1) {
+			rounds.get(rounds.size() - 2).assignNextRound(rounds.get(rounds.size() - 1));
+		}
+		return rounds.get(rounds.size() - 1);
 	}
 }

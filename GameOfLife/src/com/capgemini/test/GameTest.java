@@ -2,17 +2,17 @@ package com.capgemini.test;
 
 import static org.junit.Assert.*;
 
-import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.junit.Test;
 
 import com.capgemini.java.Cell;
+import com.capgemini.java.CellPoint;
 import com.capgemini.java.CellState;
 import com.capgemini.java.Game;
 
 public class GameTest {
-	private Point cellPosition = new Point(1, 1);
+	private CellPoint cellPosition = new CellPoint(1, 1);
 	private Cell[][] cellGrid = new Cell[][] {
 			// shouldReturnFalseForAliveCellWithLessThanTwoNeighbors
 			{ new Cell(0, 0, CellState.DEAD.getValue()), new Cell(0, 1, CellState.DEAD.getValue()),

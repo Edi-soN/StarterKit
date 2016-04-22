@@ -1,6 +1,5 @@
 package com.capgemini.java;
 
-import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +10,9 @@ import java.util.List;
  *
  */
 public class Cell {
-	private Point cellPosition = new Point(0, 0);
+	private CellPoint cellPosition = new CellPoint(0, 0);
 	private boolean cellState = CellState.DEAD.getValue();
-	private List<Point> neighboursPositions = new ArrayList<>();
+	private List<Cell> neighboursPositions = new ArrayList<>();
 	private int numberOfAliveNeighbors = 0;
 
 	public Cell(int positionX, int positionY, boolean cellState) {
@@ -22,7 +21,7 @@ public class Cell {
 		this.cellState = cellState;
 	}
 
-	public Point getCellPosition() {
+	public CellPoint getCellPosition() {
 		return this.cellPosition;
 	}
 
@@ -34,11 +33,11 @@ public class Cell {
 		this.cellState = state;
 	}
 
-	public List<Point> getNeighborsPositionsList() {
+	public List<Cell> getNeighborCellsList() {
 		return this.neighboursPositions;
 	}
 
-	public void setNeighborsPositionsList(Point neighborPosition) {
+	public void setNeighborCellsList(Cell neighborPosition) {
 		this.neighboursPositions.add(neighborPosition);
 	}
 

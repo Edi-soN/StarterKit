@@ -9,7 +9,7 @@ import java.util.List;
  *
  */
 public class Poker {
-	private Converter convertedCardList = new Converter();
+	private CardConverter convertedCardList = new CardConverter();
 	private List<Card> cardList = convertedCardList.convertRawDataToCards();
 	private int playerOneWinsCounter = 0;
 

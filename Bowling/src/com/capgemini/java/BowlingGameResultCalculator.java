@@ -6,8 +6,9 @@ public interface BowlingGameResultCalculator {
 	 * 
 	 * @param numberOfPins
 	 *            number of knocked down pins
+	 * @throws BowlingException 
 	 */
-	public void roll(int numberOfPins);
+	public void roll(int numberOfPins) throws BowlingException;
 
 	/**
 	 * @return current game score

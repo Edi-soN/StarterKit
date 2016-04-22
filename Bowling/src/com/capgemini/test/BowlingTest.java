@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.capgemini.java.BowlingException;
 import com.capgemini.java.Game;
 
 public class BowlingTest {
@@ -29,7 +30,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnTrueAfterLastRoll() {
+	public void shouldReturnTrueAfterLastRoll() throws BowlingException {
 		// given
 		Game game = new Game();
 		for (int i = 0; i < 20; i++) {
@@ -42,7 +43,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnScoreZeroForZerosOnly() {
+	public void shouldReturnScoreZeroForZerosOnly() throws BowlingException {
 		// given
 		Game game = new Game();
 		for (int i = 0; i < 12; i++) {
@@ -54,22 +55,22 @@ public class BowlingTest {
 		assertEquals(0, result);
 	}
 
-	@Test(expected = IllegalArgumentException.class)
-	public void shouldReturnExceptionForNegativeNumberOfPins() {
+	@Test(expected = BowlingException.class)
+	public void shouldReturnExceptionForNegativeNumberOfPins() throws BowlingException {
 		// given
 		Game game = new Game();
 		game.roll(-1);
 	}
 
-	@Test(expected = IllegalArgumentException.class)
-	public void shouldReturnExceptionForNumberOfPinsOverTenInSingleRoll() {
+	@Test(expected = BowlingException.class)
+	public void shouldReturnExceptionForNumberOfPinsOverTenInSingleRoll() throws BowlingException {
 		// given
 		Game game = new Game();
 		game.roll(11);
 	}
 
-	@Test(expected = IllegalArgumentException.class)
-	public void shouldReturnExceptionForNumberOfPinsOverTenInTwoRollsInARow() {
+	@Test(expected = BowlingException.class)
+	public void shouldReturnExceptionForNumberOfPinsOverTenInTwoRollsInARow() throws BowlingException {
 		// given
 		Game game = new Game();
 		game.roll(5);
@@ -77,7 +78,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnMaxScore() {
+	public void shouldReturnMaxScore() throws BowlingException {
 		// given
 		Game game = new Game();
 		for (int i = 0; i < 12; i++) {
@@ -90,7 +91,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnTenForOnesOnly() {
+	public void shouldReturnTenForOnesOnly() throws BowlingException {
 		// given
 		Game game = new Game();
 		for (int i = 0; i < 20; i++) {
@@ -103,7 +104,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnTwenty() {
+	public void shouldReturnTwenty() throws BowlingException {
 		// given
 		Game game = new Game();
 		game.roll(10);
@@ -115,7 +116,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnTen() {
+	public void shouldReturnTen() throws BowlingException {
 		// given
 		Game game = new Game();
 		game.roll(10);
@@ -126,7 +127,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnFive() {
+	public void shouldReturnFive() throws BowlingException {
 		// given
 		Game game = new Game();
 		game.roll(5);
@@ -137,7 +138,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnTwelve() {
+	public void shouldReturnTwelve() throws BowlingException {
 		// given
 		Game game = new Game();
 		game.roll(2);
@@ -150,7 +151,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnEleven() {
+	public void shouldReturnEleven() throws BowlingException {
 		// given
 		Game game = new Game();
 		game.roll(5);
@@ -163,7 +164,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnThirty() {
+	public void shouldReturnThirty() throws BowlingException {
 		// given
 		Game game = new Game();
 		game.roll(10);
@@ -175,7 +176,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnThirtyThree() {
+	public void shouldReturnThirtyThree() throws BowlingException {
 		// given
 		Game game = new Game();
 		game.roll(10);
@@ -188,7 +189,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnThirtyTwo() {
+	public void shouldReturnThirtyTwo() throws BowlingException {
 		// given
 		Game game = new Game();
 		game.roll(10);
@@ -202,7 +203,7 @@ public class BowlingTest {
 	}
 
 	@Test
-	public void shouldReturnOneHundredEightySeven() {
+	public void shouldReturnOneHundredEightySeven() throws BowlingException {
 		// given
 		int[] numberOfPins = new int[] { 10, 9, 1, 5, 5, 7, 2, 10, 10, 10, 9, 0, 8, 2, 9, 1, 10 };
 		Game game = new Game();

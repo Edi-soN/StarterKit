@@ -10,14 +10,14 @@ import org.junit.Test;
 
 import com.capgemini.java.Card;
 import com.capgemini.java.CardValue;
-import com.capgemini.java.Converter;
+import com.capgemini.java.CardConverter;
 import com.capgemini.java.Poker;
 
 public class PokerTest {
 	@Test
 	public void shouldReturnCardValueOfEight() {
 		// given
-		Converter conv = new Converter();
+		CardConverter conv = new CardConverter();
 		List<Card> cardList = conv.convertRawDataToCards();
 		// when
 		int result = cardList.get(0).getCardValue().getValue();
@@ -28,7 +28,7 @@ public class PokerTest {
 	@Test
 	public void shouldReturnCardValueOfTen() {
 		// given
-		Converter conv = new Converter();
+		CardConverter conv = new CardConverter();
 		List<Card> cardList = conv.convertRawDataToCards();
 		// when
 		int result = cardList.get(1).getCardValue().getValue();

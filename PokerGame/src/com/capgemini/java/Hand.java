@@ -38,52 +38,6 @@ public class Hand implements Comparable<Hand> {
 		calculateSetupValue();
 	}
 
-	private void checkCardsColor(List<Card> cardList) {
-		boolean allCardsOneColor = true;
-		String firstCardColor = "";
-		for (Card card : cardList) {
-			if (firstCardColor.isEmpty()) {
-				firstCardColor = card.getCardColor();
-			}
-			if (card.getCardColor() != firstCardColor) {
-				allCardsOneColor = false;
-			}
-		}
-		this.isColor = allCardsOneColor;
-	}
-
-	private void calculateSetupValue() {
-		boolean idCardCounterEqualFive = (sortedCards.size() == 5);
-		boolean isValueDiffFirstAndLastCardEqualFour = ((sortedCards.get(0).getKey()
-				- sortedCards.get(sortedCards.size() - 1).getKey()) == 4);
-		if (!idCardCounterEqualFive) {
-			String cardQuantities = "";
-			for (Map.Entry<Integer, Integer> card : sortedCards) {
-				cardQuantities += card.getValue().toString();
-			}
-			this.setupValue = CardSetup.getEnum(cardQuantities).getSetupValue();
-		}
-		boolean isColorAndValueDifferenceFour = (isColor && isValueDiffFirstAndLastCardEqualFour);
-		if (idCardCounterEqualFive && isColorAndValueDifferenceFour) {
-			this.setupValue = CardSetup.STRAIGHTFLUSH.getSetupValue();
-		}
-		if (idCardCounterEqualFive && isColorAndValueDifferenceFour
-				&& sortedCards.get(0).getKey() == CardValue.ACE.getValue()) {
-			this.setupValue = CardSetup.ROYALFLUSH.getSetupValue();
-		}
-		if (idCardCounterEqualFive && isColorAndValueDifferenceFour) {
-			this.setupValue = CardSetup.FLSUH.getSetupValue();
-		}
-		if (idCardCounterEqualFive && isValueDiffFirstAndLastCardEqualFour) {
-			this.setupValue = CardSetup.STRAIGHT.getSetupValue();
-		}
-	}
-
-	private void sortCards() {
-		sortedCards = new ArrayList<Map.Entry<Integer, Integer>>(hand.entrySet());
-		Collections.sort(sortedCards, new sortByCardQuantityThenByCardValue<Integer, Integer>());
-	}
-
 	/**
 	 * Overridden method from Comparable interface defines the rules for
 	 * comparing two sets of cards.
@@ -94,19 +48,46 @@ public class Hand implements Comparable<Hand> {
 	public int compareTo(Hand secondHand) {
 		if (this.setupValue > secondHand.setupValue) {
 			return 1;
-		} else if (this.setupValue < secondHand.setupValue) {
+		}
+		if (this.setupValue < secondHand.setupValue) {
 			return -1;
-		} else {
-			for (int i = 0; i < this.sortedCards.size(); i++) {
-				if (this.sortedCards.get(i).getKey() > secondHand.sortedCards.get(i).getKey()) {
-					return 1;
-				}
-				if (this.sortedCards.get(i).getKey() < secondHand.sortedCards.get(i).getKey()) {
-					return -1;
-				}
+		}
+		for (int i = 0; i < this.sortedCards.size(); i++) {
+			int winner = this.sortedCards.get(i).getKey().compareTo(secondHand.sortedCards.get(i).getKey());
+			if (winner != 0) {
+				return winner;
 			}
 		}
 		return 0;
+	}
+
+	private void checkCardsColor(List<Card> cardList) {
+		boolean allCardsOneColor = true;
+		String firstCardColor = cardList.get(0).getCardColor();
+		for (Card card : cardList) {
+			if (card.getCardColor() != firstCardColor) {
+				allCardsOneColor = false;
+			}
+		}
+		this.isColor = allCardsOneColor;
+	}
+
+	private void calculateSetupValue() {
+		boolean isFiveCards = (sortedCards.size() == 5);
+		boolean isDifferenceFourAndFiveCards = (((sortedCards.get(0).getKey()
+				- sortedCards.get(sortedCards.size() - 1).getKey()) == 4) && isFiveCards);
+		boolean isColorAndFiveCards = (isColor && isFiveCards);
+		String cardSetupPattern = "";
+		for (Map.Entry<Integer, Integer> card : sortedCards) {
+			cardSetupPattern += card.getValue().toString();
+		}
+		this.setupValue = CardSetup.getEnum(cardSetupPattern, isColorAndFiveCards, isDifferenceFourAndFiveCards)
+				.getSetupValue();
+	}
+
+	private void sortCards() {
+		sortedCards = new ArrayList<Map.Entry<Integer, Integer>>(hand.entrySet());
+		Collections.sort(sortedCards, new sortByCardQuantityThenByCardValue<Integer, Integer>());
 	}
 
 	// Comparator that sorts Map.Entry objects with Comparable keys and values
@@ -123,7 +104,5 @@ public class Hand implements Comparable<Hand> {
 				return secondCard.getKey().compareTo(firstCard.getKey());
 			}
 		}
-
 	}
-
 }

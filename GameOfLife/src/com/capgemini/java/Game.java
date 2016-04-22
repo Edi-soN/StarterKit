@@ -1,6 +1,5 @@
 package com.capgemini.java;
 
-import java.awt.Point;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +13,7 @@ import java.util.Random;
  *
  */
 public class Game {
-	private Map<Point, Cell> cellMap = new HashMap<>();
+	private Map<CellPoint, Cell> cellMap = new HashMap<>();
 	private Random deadOrAlive = new Random();
 
 	/**
@@ -27,7 +26,8 @@ public class Game {
 		for (Cell cell : cellList) {
 			cellMap.put(cell.getCellPosition(), cell);
 		}
-		addNeighboursPositions();
+
+		addNeighbourCells();
 	}
 
 	/**
@@ -41,36 +41,10 @@ public class Game {
 	public Game(int cellBoardWidth, int cellBoardHeight) {
 		for (int i = 0; i < cellBoardWidth; i++) {
 			for (int j = 0; j < cellBoardHeight; j++) {
-				cellMap.put(new Point(i, j), new Cell(i, j, deadOrAlive.nextBoolean()));
+				cellMap.put(new CellPoint(i, j), new Cell(i, j, deadOrAlive.nextBoolean()));
 			}
 		}
-		addNeighboursPositions();
-	}
-
-	private void addNeighboursPositions() {
-		int[][] cellOffsets = new int[][] { { -1, -1 }, { -1, 0 }, { -1, 1 }, { 0, -1 }, { 0, 1 }, { 1, -1 }, { 1, 0 },
-				{ 1, 1 } };
-		for (Entry<Point, Cell> entry : cellMap.entrySet()) {
-			for (int[] offset : cellOffsets) {
-				int positionX = entry.getValue().getCellPosition().x + offset[0];
-				int positionY = entry.getValue().getCellPosition().y + offset[1];
-				Point point = new Point(positionX, positionY);
-				if (cellMap.containsKey(point)) {
-					entry.getValue().setNeighborsPositionsList(point);
-				}
-			}
-		}
-	}
-
-	private void countAliveNeighbors() {
-		for (Entry<Point, Cell> entry : cellMap.entrySet()) {
-			int aliveNeighborsCounter = 0;
-			for (Point point : entry.getValue().getNeighborsPositionsList()) {
-				if (cellMap.get(point).getCellState() == CellState.ALIVE.getValue()) {
-					entry.getValue().setNumberOfAliveNeighbors(++aliveNeighborsCounter);
-				}
-			}
-		}
+		addNeighbourCells();
 	}
 
 	/**
@@ -78,7 +52,7 @@ public class Game {
 	 */
 	public void calculateNextGeneration() {
 		countAliveNeighbors();
-		for (Entry<Point, Cell> entry : cellMap.entrySet()) {
+		for (Entry<CellPoint, Cell> entry : cellMap.entrySet()) {
 			int numberOfAliveNeigbors = entry.getValue().getNumberOfAliveNeighbors();
 			if (numberOfAliveNeigbors == 3) {
 				entry.getValue().setCellState(CellState.ALIVE.getValue());
@@ -94,8 +68,29 @@ public class Game {
 	 * 
 	 * @return map of cells
 	 */
-	public Map<Point, Cell> getCellMap() {
+	public Map<CellPoint, Cell> getCellMap() {
 		return this.cellMap;
 	}
 
+	private void addNeighbourCells() {
+		for (Entry<CellPoint, Cell> cell : cellMap.entrySet()) {
+			List<CellPoint> cellNeighborsPositions = cell.getKey().getCellNeighboursPoints();
+			for (CellPoint neighborPoint : cellNeighborsPositions) {
+				if (cellMap.containsKey(neighborPoint)) {
+					cell.getValue().setNeighborCellsList(cellMap.get(neighborPoint));
+				}
+			}
+		}
+	}
+
+	private void countAliveNeighbors() {
+		for (Entry<CellPoint, Cell> cell : cellMap.entrySet()) {
+			int aliveNeighborsCounter = 0;
+			for (Cell neighborCell : cell.getValue().getNeighborCellsList()) {
+				if (neighborCell.getCellState() == CellState.ALIVE.getValue()) {
+					cell.getValue().setNumberOfAliveNeighbors(++aliveNeighborsCounter);
+				}
+			}
+		}
+	}
 }
