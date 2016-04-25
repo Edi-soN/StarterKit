@@ -1,0 +1,11 @@
+2016-04-22 13:55:43.129 [main] DEBUG pl.luciow.warehouse.impl.PaymentServiceImplTest - Exception has occured - no calls of processPayment method
+2016-04-22 14:00:51.756 [main] DEBUG pl.luciow.warehouse.impl.PaymentServiceImplTest - Exception has occured - no calls of processPayment method
+2016-04-25 10:00:20.670 [main] DEBUG pl.luciow.warehouse.impl.PaymentServiceImplTest - Exception has occured - no calls of processPayment method
+2016-04-25 10:00:37.669 [main] DEBUG pl.luciow.warehouse.impl.PaymentServiceImplTest - Exception has occured - no calls of processPayment method
+2016-04-25 10:01:24.298 [main] DEBUG pl.luciow.warehouse.impl.PaymentServiceImplTest - Exception has occured - no calls of processPayment method
+2016-04-25 10:04:32.823 [main] DEBUG pl.luciow.warehouse.impl.PaymentServiceImplTest - Exception has occured - no calls of processPayment method
+2016-04-25 10:06:34.224 [main] DEBUG pl.luciow.warehouse.impl.PaymentServiceImplTest - Exception has occured - no calls of processPayment method
+2016-04-25 10:06:50.448 [main] DEBUG pl.luciow.warehouse.impl.PaymentServiceImplTest - Exception has occured - no calls of processPayment method
+2016-04-25 10:08:07.335 [main] DEBUG pl.luciow.warehouse.impl.PaymentServiceImplTest - Exception has occured - no calls of processPayment method
+2016-04-25 13:11:38.172 [main] DEBUG pl.luciow.warehouse.impl.PaymentServiceImplTest - Exception has occured - no calls of processPayment method
+2016-04-25 13:12:08.761 [main] DEBUG pl.luciow.warehouse.impl.PaymentServiceImplTest - Exception has occured - no calls of processPayment method

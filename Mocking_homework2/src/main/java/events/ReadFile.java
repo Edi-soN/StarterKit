@@ -5,8 +5,11 @@ import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 import main.MainFrame;
@@ -22,7 +25,13 @@ public class ReadFile implements ActionListener {
 		String path = MainFrame.mainPanel.namePanel.textField.getText();
 
 		if (!path.equals("") && new File(path).isFile()) {
-			fileInArea(area, path);
+			try {
+				fileInArea(area, path);
+			} catch (NoFileToReadException e) {
+				JOptionPane.showMessageDialog(new JFrame("Error"), e.getMessage());
+			} catch (IOException e) {
+				JOptionPane.showMessageDialog(new JFrame("Error"), e.getMessage());
+			}
 			PathPanel.sayFileOpened();
 		} else {
 			JFileChooser fileopen = new JFileChooser();
@@ -30,7 +39,13 @@ public class ReadFile implements ActionListener {
 			if (ret == JFileChooser.APPROVE_OPTION) {
 
 				path = fileopen.getSelectedFile().getAbsolutePath();
-				fileInArea(area, path);
+				try {
+					fileInArea(area, path);
+				} catch (NoFileToReadException e) {
+					JOptionPane.showMessageDialog(new JFrame("Error"), e.getMessage());
+				} catch (IOException e) {
+					JOptionPane.showMessageDialog(new JFrame("Error"), e.getMessage());
+				}
 
 				MainFrame.mainPanel.namePanel.textField.setText(path);
 				PathPanel.sayFileOpened();
@@ -38,15 +53,23 @@ public class ReadFile implements ActionListener {
 		}
 	}
 
-	private void fileInArea(JTextArea area, String path) {
+	public void fileInArea(JTextArea area, String path) throws NoFileToReadException, IOException {
 		/*
-		 * TODO 3: Obsluz wyjatek tak, by go zlapac, przekazac wlasny wyjatek NoFileToReadException wyzej
-		 * i obsluzyc go w metodzie nadrzednej.
+		 * TODO 3: Obsluz wyjatek tak, by go zlapac, przekazac wlasny wyjatek
+		 * NoFileToReadException wyzej i obsluzyc go w metodzie nadrzednej.
 		 * Podobnie jak w TODO 1, mozesz obsluzyc go w dowolny sposob.
 		 */
-			FileReader reader = new FileReader(path);
-			BufferedReader br = new BufferedReader(reader);
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(path));
 			area.read(br, null);
+		} catch (IOException e) {
+			throw new NoFileToReadException();
+		}
+		try {
 			br.close();
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(new JFrame("Error"), e.getMessage());
+		}
 	}
 }
