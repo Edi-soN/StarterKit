@@ -12,13 +12,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.invocation.InvocationOnMock;
-import org.mockito.runners.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
 
 import pl.luciow.warehouse.PaymentProcessor;
@@ -29,7 +27,6 @@ import pl.luciow.warehouse.util.PaymentValidator;
  *
  * @author Mariusz
  */
-@RunWith(MockitoJUnitRunner.class)
 public class PaymentServiceImplTest {
 
 	private final static Logger logger = LogManager.getLogger(PaymentServiceImplTest.class);
@@ -53,6 +50,7 @@ public class PaymentServiceImplTest {
 		//paymentProcessor = Mockito.mock(PaymentProcessor.class);
 		//paymentValidator = Mockito.mock(PaymentValidator.class);
 		Mockito.doAnswer(new Answer<Void>() {
+			@SuppressWarnings("unchecked")
 			public Void answer(InvocationOnMock invocation) {
 				System.out.println("Entered");
 				Object[] args = invocation.getArguments();
