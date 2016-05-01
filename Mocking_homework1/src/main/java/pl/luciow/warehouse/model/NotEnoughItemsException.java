@@ -9,6 +9,7 @@ package pl.luciow.warehouse.model;
  *
  * @author Mariusz
  */
+@SuppressWarnings("serial")
 public class NotEnoughItemsException extends Exception {
 
 }

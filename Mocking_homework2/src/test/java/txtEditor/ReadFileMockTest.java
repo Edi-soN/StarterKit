@@ -77,6 +77,7 @@ public class ReadFileMockTest {
 		}
 	}
 
+	// Canceled
 	/*
 	 * TODO 5: Przetestuj metode actionPerformed w klasie ReadFile. Chcemy
 	 * sprawic, by PathPanel.sayFileOpened() nie zostalo wywolane. Utworz mock

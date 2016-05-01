@@ -21,7 +21,8 @@ public class PaymentServiceImpl implements PaymentService {
 
     private PaymentProcessor paymentProcessor;
 
-    public Long processPayment(Payment payment) throws Exception {
+    @SuppressWarnings("unchecked")
+	public Long processPayment(Payment payment) throws Exception {
         ValidatorUtils.validate(payment, validator);
         return paymentProcessor.processPayment(payment);
     }

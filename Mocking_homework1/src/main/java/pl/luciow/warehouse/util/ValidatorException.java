@@ -11,6 +11,7 @@ import java.util.List;
  *
  * @author Mariusz
  */
+@SuppressWarnings("serial")
 public class ValidatorException extends Exception {
 
     private final List<String> reasons;
