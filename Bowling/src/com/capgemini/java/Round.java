@@ -26,8 +26,12 @@ public class Round {
 		if (!(this instanceof LastRound) && !rolls.isEmpty() && rolls.get(0).getScore() + numberOfPins > 10) {
 			throw new BowlingException("Illegal number of pins");
 		}
+		
+		//validate();
 		rolls.add(new Roll(numberOfPins));
 	}
+	
+	//protected validateInput(num) 
 
 	/**
 	 * Calculate total number of knocked pins in a single round.
@@ -92,12 +96,13 @@ public class Round {
 	}
 
 	private int getTwoRolls() {
+		int score = rolls.get(0).getScore();
 		if (rolls.size() < 2 && nextRound != null) {
-			return rolls.get(0).getScore() + nextRound.getOneRoll();
+			 score += nextRound.getOneRoll();
 		}
-		if (rolls.size() < 2 && nextRound == null) {
-			return rolls.get(0).getScore();
+		if (rolls.size() == 2) {
+		    score += rolls.get(1).getScore();
 		}
-		return rolls.get(0).getScore() + rolls.get(1).getScore();
+		return score;
 	}
 }

@@ -7,6 +7,7 @@ package com.capgemini.java;
  *
  */
 public enum CellState {
+	// bez wartosci
 	ALIVE(true), DEAD(false);
 
 	private boolean value = false;

@@ -52,11 +52,11 @@ public class BookServiceImpl implements BookService {
 	@Override
 	@Transactional(readOnly = false)
 	public List<BookTo> findBookById(Long id) {
-		return bookRepository.findBookId(id);
+		return BookMapper.map2To(bookRepository.findBookId(id));
 	}
 
 	@Override
 	public List<BookTo> findBooksByTitleAndAuthor(String title, String author) {
-		return bookRepository.findBookByTitleAndAuthor(title, author);
+		return BookMapper.map2To(bookRepository.findBookByTitleAndAuthor(title, author));
 	}
 }

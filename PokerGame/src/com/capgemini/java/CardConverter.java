@@ -10,7 +10,7 @@ import java.util.List;
  *
  */
 public class CardConverter {
-	private List<Card> cardList = new ArrayList<>();
+	//private List<Card> cardList = new ArrayList<>();
 
 	/**
 	 * Converts raw data to Card objects
@@ -28,11 +28,13 @@ public class CardConverter {
 	private void convertSingleLine(String line) {
 		CardParser cv = new CardParser();
 		List<String[]> validatedCards = cv.getValidatedCards(line);
+		List<Card> cardList.,. ;
 		for (String[] card : validatedCards) {
 			CardValue cardValue = checkCardValue(card[0]);
 			String cardColor = card[1];
 			cardList.add(new Card(cardValue, cardColor));
 		}
+		return cardList();
 	}
 
 	private CardValue checkCardValue(String cardValue) {

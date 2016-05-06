@@ -77,7 +77,7 @@ public class Game {
 			List<CellPoint> cellNeighborsPositions = cell.getKey().getCellNeighboursPoints();
 			for (CellPoint neighborPoint : cellNeighborsPositions) {
 				if (cellMap.containsKey(neighborPoint)) {
-					cell.getValue().setNeighborCellsList(cellMap.get(neighborPoint));
+					cell.getValue().addToNeighborCellsList(cellMap.get(neighborPoint));
 				}
 			}
 		}

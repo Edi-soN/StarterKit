@@ -7,8 +7,12 @@ package com.capgemini.java;
  *
  */
 public enum CardSetup {
-	HIGHCARD("11111", false, false, 0), ONEPAIR("2111", false, false, 1), TWOPAIR("221", false, false,
-			2), THREEOFAKIND("311", false, false, 3), STRAIGHT("11111", false, true, 4), FLSUH("11111", true, false,
+	
+	HIGHCARD("11111", false, false, 0), 
+	ONEPAIR("2111", false, false, 1), 
+	TWOPAIR("221", false, false,
+			2), 
+	THREEOFAKIND("311", false, false, 3), STRAIGHT("11111", false, true, 4), FLSUH("11111", true, false,
 					5), FULLHOUSE("32", false, false, 6), FOUROFAKIND("41", false, false, 7), STRAIGHTFLUSH("11111",
 							true, true, 8), ROYALFLUSH("11111", true, true, 9);
 

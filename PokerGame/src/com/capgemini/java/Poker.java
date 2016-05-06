@@ -10,8 +10,6 @@ import java.util.List;
  */
 public class Poker {
 	private CardConverter convertedCardList = new CardConverter();
-	private List<Card> cardList = convertedCardList.convertRawDataToCards();
-	private int playerOneWinsCounter = 0;
 
 	/**
 	 * Calculates number of times when first player wins during whole game.
@@ -19,25 +17,26 @@ public class Poker {
 	 * @return quantity of first player wins
 	 */
 	public int calculateNumberOfPlayerOneWins() {
-		calculateAllDeals();
-		return playerOneWinsCounter;
+		
+		return calculateAllDeals(convertedCardList.convertRawDataToCards()); //playerOneWinsCounter;
 	}
 
 	public int calculateNumberOfPlayerOneWins(List<Card> givenListOfCards) {
-		cardList = givenListOfCards;
-		calculateAllDeals();
-		return playerOneWinsCounter;
+		return calculateAllDeals(givenListOfCards); //playerOneWinsCounter;
 	}
 
-	private void calculateAllDeals() {
+	private int calculateAllDeals(List<Card> cardList) {
+		int playerOneWinsCounter =0;
 		for (int i = 0; i < cardList.size(); i += 10) {
 			Hand firstPlayer = new Hand();
 			Hand secondPlayer = new Hand();
 			firstPlayer.addCardsToHand(cardList.subList(i, i + 5));
 			secondPlayer.addCardsToHand(cardList.subList(i + 5, i + 10));
 			if (firstPlayer.compareTo(secondPlayer) == 1) {
-				playerOneWinsCounter++;
+				playerOneWinsCounter ++;
 			}
 		}
+		
+		return playerOneWinsCounter;
 	}
 }

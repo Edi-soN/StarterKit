@@ -10,9 +10,9 @@ import java.util.List;
  *
  */
 public class Cell {
-	private CellPoint cellPosition = new CellPoint(0, 0);
+	private CellPoint cellPosition; //= new CellPoint(0, 0);
 	private boolean cellState = CellState.DEAD.getValue();
-	private List<Cell> neighboursPositions = new ArrayList<>();
+	private List<Cell> neighboursPositions = new ArrayList<Cell>();
 	private int numberOfAliveNeighbors = 0;
 
 	public Cell(int positionX, int positionY, boolean cellState) {
@@ -37,7 +37,7 @@ public class Cell {
 		return this.neighboursPositions;
 	}
 
-	public void setNeighborCellsList(Cell neighborPosition) {
+	public void addToNeighborCellsList(Cell neighborPosition) {
 		this.neighboursPositions.add(neighborPosition);
 	}
 
