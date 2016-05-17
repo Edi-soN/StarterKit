@@ -25,7 +25,7 @@
 				<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
 					<div class="thumbnail">
 						<div class="caption">
-							<h3>${book.id}</h3>
+							<h3><span class="label label-default">${book.id}</span></h3>
 							<p>${book.title}</p>
 							<p>${book.authors}</p>
 							<p>Status: ${book.status}</p>
@@ -33,12 +33,12 @@
 								<a
 									href=" <spring:url value="/books/book?id=${book.id}" /> "
 									class="btn btn-primary"> <span
-									class="glyphicon-info-sign glyphicon" /></span> Details
+									class="glyphicon-book glyphicon" /></span> Details
 								</a>
 								<a
 									href=" <spring:url value="/books/remove?id=${book.id}" /> "
 									class="btn btn-primary"> <span
-									class="glyphicon-info-sign glyphicon" /></span> Remove
+									class="glyphicon-remove glyphicon" /></span> Remove
 								</a>
 							</p>
 

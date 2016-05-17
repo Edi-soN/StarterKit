@@ -60,6 +60,12 @@
 				</div>
 			</div>
 		</form:form>
+		<p>
+			<a href="<spring:url value="/books" />" class="btn btn-default">
+				<span class="glyphicon-hand-left glyphicon"></span> back
+			</a>
+
+		</p>
 	</section>
 </body>
 </html>

@@ -3,13 +3,14 @@ package pl.spring.demo.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import pl.spring.demo.to.AuthorTo;
 import pl.spring.demo.to.BookTo;
 import pl.spring.demo.to.BookEntity;
 
-@Service
+@Component
 public class BookMapper {
 
 	public BookTo convertFromBookEntityIntoBookTo(BookEntity book) {

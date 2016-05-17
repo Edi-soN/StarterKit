@@ -13,7 +13,7 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h1>${greeting}</h1>
-				<p>${info}</p>
+				<p>${info} <img align="right" src="http://blogs.adobe.com/captivate/files/2013/01/Picture1.jpg" class="img-rounded" alt="Books" width="304" height="236"></p>
 			</div>
 		</div>
 	</section>
@@ -60,7 +60,7 @@
 						<p>Find specific book</p>
 						<p>
 							<a href="/webstore/books/find" class="btn btn-default"> <span
-								class="glyphicon-info-sign glyphicon" /></span> Find book
+								class="glyphicon-search glyphicon" /></span> Find book
 							</a>
 						</p>
 					</div>

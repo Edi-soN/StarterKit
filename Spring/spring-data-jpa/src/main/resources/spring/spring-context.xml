@@ -15,7 +15,8 @@
 	<context:component-scan base-package="pl.spring.demo" />
 
 	<!-- Aspect bean -->
-	<bean id="bookDaoAdvisor" class="pl.spring.demo.aop.BookDaoAdvisor" />
+	<!-- <bean id="bookDaoAdvisor" class="pl.spring.demo.aop.BookDaoAdvisor" 
+		/> -->
 
 	<!-- <bean id="bookService" class="pl.spring.demo.service.impl.BookServiceImpl"> 
 		<property name="bookDao" ref="bookDao" /> </bean> <bean id="sequence" class="pl.spring.demo.common.Sequence" 

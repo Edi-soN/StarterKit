@@ -4,6 +4,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import pl.spring.demo.annotation.NullableId;
 import pl.spring.demo.common.Sequence;
@@ -11,6 +12,7 @@ import pl.spring.demo.dao.DaoAbstract;
 import pl.spring.demo.exception.BookNotNullIdException;
 import pl.spring.demo.to.IdAware;
 
+@Component
 @Aspect
 public class BookDaoAdvisor {
 

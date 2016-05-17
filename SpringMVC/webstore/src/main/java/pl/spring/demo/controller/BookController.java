@@ -64,7 +64,7 @@ public class BookController {
 		if (newBook.getTitle() != null && newBook.getAuthors() != null) {
 			modelAndView.addObject("newBook", bookService.saveBook(newBook));
 		}
-		modelAndView.setViewName(ViewNames.ADD_BOOK);
+		modelAndView.setViewName(ViewNames.WELCOME);
 		return modelAndView;
 	}
 
