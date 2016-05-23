@@ -5300,3 +5300,121 @@
 2016-05-16 12:28:04.306 [main] DEBUG service.TableService - | 172       | 8738      | Tak.                                                                                                | 
 2016-05-16 12:28:04.306 [main] DEBUG service.TableService - | 173       | 8738      | Nie.                                                                                                | 
 2016-05-16 12:28:04.306 [main] DEBUG service.TableService - -------------------------------------------------------------------------------------------------------------------------------
+2016-05-18 08:11:26.845 [main] DEBUG service.TableService - -------------------------------------------------------------------------------------------------------------------------------
+2016-05-18 08:11:26.846 [main] DEBUG service.TableService - Table: answers
+2016-05-18 08:11:26.846 [main] DEBUG service.TableService - -------------------------------------------------------------------------------------------------------------------------------
+2016-05-18 08:11:26.846 [main] DEBUG service.TableService - | id        | topic_id  | answer                                                                                              | 
+2016-05-18 08:11:26.846 [main] DEBUG service.TableService - -------------------------------------------------------------------------------------------------------------------------------
+2016-05-18 08:11:26.846 [main] DEBUG service.TableService - | 3         | 141       | Tak - na liscie powinny byc wszystkie                                                               | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 4         | 141       | Nie - ograniczmy liste do ostatnich                                                                 | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 5         | 348       | Tak                                                                                                 | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 6         | 348       | Nie                                                                                                 | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 7         | 562       | Tak                                                                                                 | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 8         | 562       | Nie                                                                                                 | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 58        | 2887      | Dajmy szansę frajerom.                                                                              | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 57        | 2887      | Daruj różowa kreaturo.                                                                              | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 59        | 2954      | Tak.                                                                                                | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 146       | 7401      | Może w przyszłości                                                                                  | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 145       | 7401      | Nie                                                                                                 | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 61        | 2954      | To już wszystko było.                                                                               | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 60        | 2954      | Nie.                                                                                                | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 91        | 4312      | Tak dla portfela i tak dla kranga                                                                   | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 92        | 4312      | Tak dla portfela ale różowemu nie zaufam                                                            | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 134       | 7226      | Nie                                                                                                 | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 133       | 7226      | Tak                                                                                                 | 
+2016-05-18 08:11:26.847 [main] DEBUG service.TableService - | 139       | 7290      | CyberBrevik                                                                                         | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 138       | 7290      | Pocket                                                                                              | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 137       | 7290      | Polsilver                                                                                           | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 136       | 7273      | Nie                                                                                                 | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 135       | 7273      | Tak                                                                                                 | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 144       | 7401      | Tak                                                                                                 | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 147       | 7676      | Tak, dzięki!                                                                                        | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 148       | 7676      | Nie, piszę lepsze z zamkniętymi oczami.                                                             | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 56        | 2435      | NIE                                                                                                 | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 55        | 2435      | TAK                                                                                                 | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 62        | 2986      | Whonix                                                                                              | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 63        | 2986      | Tails                                                                                               | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 64        | 2986      | Winda + Gateway                                                                                     | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 65        | 2986      | Tor Browser                                                                                         | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 66        | 2986      | Liberté                                                                                             | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 67        | 2986      | Własny system                                                                                       | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 68        | 2986      | Inne                                                                                                | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 69        | 3014      | SZEF INTERESU/EL MEXIKO                                                                             | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 70        | 3014      | MEKSIKANA                                                                                           | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 71        | 3130      | Tak, dajcie mu plusa ;)                                                                             | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 72        | 3130      | Nie moja działka, ale tutorial dobry.                                                               | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 73        | 3130      | tl;dr, ale plus sie należy.                                                                         | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 74        | 3148      | Rozwijac bo ladne to                                                                                | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 75        | 3148      | Nie rozwijac                                                                                        | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 76        | 3148      | Rozwijac ale upodobnic do tailsa                                                                    | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 77        | 3148      | Kill it with fire                                                                                   | 
+2016-05-18 08:11:26.848 [main] DEBUG service.TableService - | 78        | 3193      | No jasne, już 4 razy.                                                                               | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 79        | 3193      | Nie, ale chyba spróbuje.                                                                            | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 80        | 3193      | Nie mam tyle kasy na samochod :P                                                                    | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 81        | 3217      | No jasne! Nawet symboliczny ułamek BTC wrzuce autorowi ;)                                           | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 82        | 3217      | Przyda sie jak najbardziej, i daje plusa a nie BTC                                                  | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 83        | 3217      | Mam wlasny lepszy sposob i za chuj sie nie podziele :P                                              | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 84        | 3217      | Coś takiego już ktoś zrobil (info pls)                                                              | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 85        | 3558      | Tak.                                                                                                | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 86        | 3558      | Nie, ale zacznę.                                                                                    | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 87        | 3558      | Nie, mam swoje sposoby.                                                                             | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 88        | 3580      | Tak.                                                                                                | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 89        | 3580      | Nie.                                                                                                | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 90        | 3580      | Nie moge, bo wyjebali mnie inni.                                                                    | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 93        | 4312      | Na chuj cebulowy portfel jak jest pełno alternatyw                                                  | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 94        | 4312      | Moja maszyna mój portfel                                                                            | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 95        | 4312      | Clearnetowy wallet styknie                                                                          | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 96        | 4590      | Clearnecie                                                                                          | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 97        | 4590      | W ramach usług Hidden Services                                                                      | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 98        | 4847      | Tak                                                                                                 | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 99        | 4847      | Nie                                                                                                 | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 100       | 5310      | Tak                                                                                                 | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 101       | 5310      | Tak i chetnie go ulepsze                                                                            | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 102       | 5310      | Wolę swojego fryzjera - wie jak lubię ;)                                                            | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 112       | 6246      | Mam to w dupię wolę zgadywać hasła                                                                  | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 111       | 6246      | Tak i chętnie pomogę w jego rozwoju                                                                 | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 110       | 6246      | Tak                                                                                                 | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 113       | 6864      | tak                                                                                                 | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 114       | 6864      | nie                                                                                                 | 
+2016-05-18 08:11:26.849 [main] DEBUG service.TableService - | 115       | 6963      | Zdzisława Dyrmę                                                                                     | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 116       | 6963      | Dyrmę Zdzisława                                                                                     | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 117       | 7049      | Braun                                                                                               | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 118       | 7049      | Dupa                                                                                                | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 119       | 7049      | Jarubas psl ludowiec pedał                                                                          | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 120       | 7049      | komuchowski                                                                                         | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 121       | 7049      | Janusz Korwin Mikke niekoronowany Król Polski                                                       | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 122       | 7049      | Marian vel "przypierdol" Kowalski facet z siłowni.                                                  | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 123       | 7049      | cookies                                                                                             | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 124       | 7079      | Duda                                                                                                | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 125       | 7079      | Komorowski                                                                                          | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 126       | 7079      | Dyrma                                                                                               | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 127       | 7195      | Jest ok uploadujemy                                                                                 | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 128       | 7195      | Wydupiaj z premium, utrzymuj z dotacji                                                              | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 129       | 7195      | Ale panie inny skrypt pan użyj                                                                      | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 130       | 7195      | Niech będzie i tak                                                                                  | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 131       | 7195      | Zaś Krang i jego pomysły                                                                            | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 132       | 7195      | I <3 Krang :*                                                                                       | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 149       | 7839      | Taaaak używajmy Galaxy2!                                                                            | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 150       | 7839      | Nieeee, wydupiej Pan z takimi pomysłami na drzewo                                                   | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 151       | 7839      | Taaaak, ale zróbmy to po swojemu                                                                    | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 152       | 7839      | Nieeee, weź się chyć dokończenia hostingu plików                                                    | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 153       | 7877      | List zwykly poczta polska                                                                           | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 154       | 7877      | Paczkomaty                                                                                          | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 155       | 7947      | Tak                                                                                                 | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 156       | 7947      | Nie                                                                                                 | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 157       | 7947      | Nie wiem                                                                                            | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 158       | 7949      | Tak                                                                                                 | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 159       | 7949      | Nie                                                                                                 | 
+2016-05-18 08:11:26.850 [main] DEBUG service.TableService - | 165       | 8124      | Nie                                                                                                 | 
+2016-05-18 08:11:26.851 [main] DEBUG service.TableService - | 164       | 8124      | Tak                                                                                                 | 
+2016-05-18 08:11:26.851 [main] DEBUG service.TableService - | 162       | 8105      | tak                                                                                                 | 
+2016-05-18 08:11:26.851 [main] DEBUG service.TableService - | 163       | 8105      | nie                                                                                                 | 
+2016-05-18 08:11:26.851 [main] DEBUG service.TableService - | 166       | 8197      | Tak                                                                                                 | 
+2016-05-18 08:11:26.851 [main] DEBUG service.TableService - | 167       | 8197      | Nie                                                                                                 | 
+2016-05-18 08:11:26.851 [main] DEBUG service.TableService - | 168       | 8216      | 1                                                                                                   | 
+2016-05-18 08:11:26.851 [main] DEBUG service.TableService - | 169       | 8216      | 2                                                                                                   | 
+2016-05-18 08:11:26.851 [main] DEBUG service.TableService - | 170       | 8473      | Tak                                                                                                 | 
+2016-05-18 08:11:26.851 [main] DEBUG service.TableService - | 171       | 8473      | Jasne, że tak                                                                                       | 
+2016-05-18 08:11:26.851 [main] DEBUG service.TableService - | 172       | 8738      | Tak.                                                                                                | 
+2016-05-18 08:11:26.851 [main] DEBUG service.TableService - | 173       | 8738      | Nie.                                                                                                | 
+2016-05-18 08:11:26.851 [main] DEBUG service.TableService - -------------------------------------------------------------------------------------------------------------------------------
