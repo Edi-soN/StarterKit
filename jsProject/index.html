@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>StarterKit JS App</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body onload="navi.showCalc()">
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="#" onclick="navi.showCalc()">Calculator</a>
+                </li>
+                <li>
+                    <a href="#" onclick="navi.showReq()">XMLHttpRequest </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>JS App</h1>
+
+                        <section id="calc">
+                          <p><h4>Calculator</h4></p>
+                          <br>
+                          <div class="form-group">
+                            <div class="one">
+                              <label for="firstNumber">First number:</label>
+                              <input style="width: 150px;" type="number" class="form-control" id="firstNumber">
+                              <br>
+                              <label for="secondNumber">Second number:</label>
+                              <input style="width: 150px;" type="number" class="form-control" id="secondNumber">
+                              <br>
+                              <label for="result">Result:</label>
+                              <input style="width: 150px;" type="number" class="form-control" id="result" disabled>
+                            </div>
+                            <div class="two">
+                              <br>
+                              <div class="btn-group-vertical">
+                                <button type="button" class="btn btn-default btn-md" onclick="calculator_interface.addition()">+</button>
+                                <button type="button" class="btn btn-default btn-md" onclick="calculator_interface.substraction()">-</button>
+                                <button type="button" class="btn btn-default btn-md" onclick="calculator_interface.division()">/</button>
+                                <button type="button" class="btn btn-default btn-md" onclick="calculator_interface.multiplication()">*</button>
+                                <button type="button" class="btn btn-default btn-md" onclick="calculator_interface.factorial()">!</button>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+
+                        <section id="req">
+                          <p><h4>XMLHttpRequest</h4></p>
+                          <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>Id</th>
+                                <th>Title</th>
+                                <th>Year</th>
+                                <th>Genre</th>
+                                <th>Publisher</th>
+                                <th>Platform</th>
+                                <th>Metascore</th>
+                              </tr>
+                            </thead>
+                            <tbody id="gameTable">
+                            </tbody>
+                          </table>
+                        </section>
+                        <br><br><br>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+      <!-- myScripts -->
+      <script src="js/page_navigation.js"></script>
+      <script src="js/http_request.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/calculator.js"></script>
+      <script src="js/calculator_interface.js"></script>
+
+</body>
+
+</html>
