@@ -1,0 +1,82 @@
+[
+    {
+        "title": "Overwatch",
+        "year": 2016,
+        "genre": "General",
+        "publisher": "Blizzard Entertainemnt",
+        "platform": "PC",
+        "metascore": 96
+    },
+    {
+        "title": "Dark Souls III",
+        "year": 2016,
+        "genre": "Role-Playing",
+        "publisher": "Bandai Namco Games",
+        "platform": "PC",
+        "metascore": 90
+    },
+    {
+        "title": "DOOM",
+        "year": 2016,
+        "genre": "Sci-Fi",
+        "publisher": "Bethesda Softworks",
+        "platform": "PC",
+        "metascore": 85
+    },
+    {
+        "title": "Far Cry Primal",
+        "year": 2016,
+        "genre": "Action",
+        "publisher": "Ubisoft",
+        "platform": "PC",
+        "metascore": 74
+    },
+    {
+        "title": "Battleborn",
+        "year": 2016,
+        "genre": "Sci-Fi",
+        "publisher": "2K Games",
+        "platform": "PC",
+        "metascore": 72
+    },
+    {
+        "title": "Half-Life 2",
+        "year": 2004,
+        "genre": "Action",
+        "publisher": "Valve Software",
+        "platform": "PC",
+        "metascore": 96
+    },
+    {
+        "title": "Grand Theft Auto V",
+        "year": 2015,
+        "genre": "Modern",
+        "publisher": "Rockstar Games",
+        "platform": "PC",
+        "metascore": 96
+    },
+    {
+        "title": "Portal 2",
+        "year": 2011,
+        "genre": "Action",
+        "publisher": "Valve Software",
+        "platform": "PC",
+        "metascore": 95
+    },
+    {
+        "title": "Minecraft",
+        "year": 2009,
+        "genre": "Action Adventure",
+        "publisher": "Mojang AB",
+        "platform": "PC",
+        "metascore": 93
+    },
+    {
+        "title": "World of Warcraft",
+        "year": 2004,
+        "genre": "MMORPG",
+        "publisher": "Blizzard Entertainemnt",
+        "platform": "PC",
+        "metascore": 93
+    }
+]

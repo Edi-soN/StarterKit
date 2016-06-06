@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="modal-content">
+    <div class="modal-header">
+        <h3 class="modal-title">Edit game</h3>
+    </div>
+    <div class="modal-body">
+
+      <form class="form-horizontal" role="form" name="myform">
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="title">Title:</label>
+          <div class="col-sm-10">
+            <input style="width: 300px;" type="text" class="form-control" id="title" value="{{selectedGame.title}}" ng-model="selectedGame.title" placeholder="Mandatory field" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="year">Year:</label>
+          <div class="col-sm-5">
+            <p class="input-group">
+            <input style="width: 300px;" type="text" class="form-control" id="year" value="{{selectedGame.year}}" ng-model="selectedGame.year">
+            <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="openCallendar()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+          </p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="genre">Genre:</label>
+          <div class="col-sm-10">
+            <input style="width: 300px;" type="text" class="form-control" id="genre" value="{{selectedGame.genre}}" ng-model="selectedGame.genre" placeholder="Mandatory field" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="publisher">Publisher:</label>
+          <div class="col-sm-10">
+            <input style="width: 300px;" type="text" class="form-control" id="publisher" value="{{selectedGame.publisher}}" ng-model="selectedGame.publisher">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="platform">Platform:</label>
+          <div class="col-sm-10">
+            <input style="width: 300px;" type="text" class="form-control" id="platform" value="{{selectedGame.platform}}" ng-model="selectedGame.platform">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="metascore">Metascore:</label>
+          <div class="col-sm-10">
+            <input style="width: 300px;" type="text" class="form-control" id="metascore" value="{{selectedGame.metascore}}" ng-model="selectedGame.metascore">
+          </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary" ng-disabled="!myform.$valid" ng-click="ok()">Save</button>
+      <button class="btn btn-primary" ng-click="cancel()">Cancel</button>
+    </div>
+</div>
+</body>
+</html>
