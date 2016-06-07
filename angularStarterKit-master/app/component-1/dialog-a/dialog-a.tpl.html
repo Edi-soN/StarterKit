@@ -14,7 +14,7 @@
             <th>Metascore</th>
         </thead>
         <tbody>
-            <tr data-ng-repeat="game in data.games" data-ng-click="selectGame(game, $index)">
+            <tr data-ng-repeat="game in data.games" data-ng-click="selectGame(game, $index)" ng-style="set_color($index)">
                 <td>{{game.title}}</td>
                 <td>{{game.year}}</td>
                 <td>{{game.genre}}</td>
