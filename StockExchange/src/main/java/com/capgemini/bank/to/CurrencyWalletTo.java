@@ -1,44 +1,43 @@
 package com.capgemini.bank.to;
 
-import java.math.BigDecimal;
-
+import com.capgemini.bank.impl.CurrencyType;
 
 public class CurrencyWalletTo {
 
-	private int id;
-	private BigDecimal currencyamount;
-	private String currencyname;
+	private Long id;
+	private float currencyamount;
+	private CurrencyType currencyname;
 
 	public CurrencyWalletTo() {
 	}
 	
-	public CurrencyWalletTo(int id, String currencyname, BigDecimal currencyamount) {
+	public CurrencyWalletTo(Long id, CurrencyType currencyname, float currencyamount) {
 		this.id = id;
 		this.currencyname = currencyname;
 		this.currencyamount = currencyamount;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public BigDecimal getCurrencyamount() {
+	public float getCurrencyamount() {
 		return this.currencyamount;
 	}
 
-	public void setCurrencyamount(BigDecimal currencyamount) {
+	public void setCurrencyamount(float currencyamount) {
 		this.currencyamount = currencyamount;
 	}
 
-	public String getCurrencyname() {
+	public CurrencyType getCurrencyname() {
 		return this.currencyname;
 	}
 
-	public void setCurrencyname(String currencyname) {
+	public void setCurrencyname(CurrencyType currencyname) {
 		this.currencyname = currencyname;
 	}
 

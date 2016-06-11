@@ -9,5 +9,9 @@ public class RandomNumberGenerator {
 	public static int randomize(int lowerBound, int upperBound) {
 		return rng.nextInt(upperBound - lowerBound) + lowerBound;
 	}
+	
+	public static float randomize(float lowerBound, float upperBound) {
+		return rng.nextFloat() * (upperBound - lowerBound) + lowerBound;
+	}
 
 }

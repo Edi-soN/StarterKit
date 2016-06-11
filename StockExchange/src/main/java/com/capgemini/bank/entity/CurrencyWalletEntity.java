@@ -1,8 +1,16 @@
 package com.capgemini.bank.entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
-import java.math.BigDecimal;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+
+import com.capgemini.bank.impl.CurrencyType;
 
 
 /**
@@ -15,43 +23,44 @@ public class CurrencyWalletEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
 
-	private BigDecimal currencyamount;
+	private float currencyamount;
 
-	private String currencyname;
+	@Enumerated(EnumType.STRING)
+	private CurrencyType currencyname;
 
 	public CurrencyWalletEntity() {
 	}
 	
-	public CurrencyWalletEntity(int id, String currencyname, BigDecimal currencyamount) {
+	public CurrencyWalletEntity(Long id, CurrencyType currencyname, float currencyamount) {
 		this.id = id;
 		this.currencyname = currencyname;
 		this.currencyamount = currencyamount;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public BigDecimal getCurrencyamount() {
+	public float getCurrencyamount() {
 		return this.currencyamount;
 	}
 
-	public void setCurrencyamount(BigDecimal currencyamount) {
+	public void setCurrencyamount(float currencyamount) {
 		this.currencyamount = currencyamount;
 	}
 
-	public String getCurrencyname() {
+	public CurrencyType getCurrencyname() {
 		return this.currencyname;
 	}
 
-	public void setCurrencyname(String currencyname) {
+	public void setCurrencyname(CurrencyType currencyname) {
 		this.currencyname = currencyname;
 	}
 

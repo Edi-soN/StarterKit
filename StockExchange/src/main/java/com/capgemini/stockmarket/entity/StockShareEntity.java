@@ -2,38 +2,43 @@ package com.capgemini.stockmarket.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
-
 
 /**
  * The persistent class for the stockshare database table.
  * 
  */
 @Entity
-@NamedQuery(name="StockShareEntity.findAll", query="SELECT s FROM StockShareEntity s")
+@NamedQuery(name = "StockShareEntity.findAll", query = "SELECT s FROM StockShareEntity s")
 public class StockShareEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
 	@Temporal(TemporalType.DATE)
 	private Date sharedate;
 
 	private String sharename;
 
-	private BigDecimal shareprice;
+	private float shareprice;
 
 	public StockShareEntity() {
 	}
 
-	public int getId() {
+	public StockShareEntity(Long id, String sharename, float shareprice, Date sharedate) {
+		this.id = id;
+		this.sharename = sharename;
+		this.shareprice = shareprice;
+		this.sharedate = sharedate;
+	}
+
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -53,11 +58,11 @@ public class StockShareEntity implements Serializable {
 		this.sharename = sharename;
 	}
 
-	public BigDecimal getShareprice() {
+	public float getShareprice() {
 		return this.shareprice;
 	}
 
-	public void setShareprice(BigDecimal shareprice) {
+	public void setShareprice(float shareprice) {
 		this.shareprice = shareprice;
 	}
 

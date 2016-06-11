@@ -1,31 +1,43 @@
 package com.capgemini.brokerageoffice.to;
 
-import java.math.BigDecimal;
+import com.capgemini.strategy.impl.ActionType;
 
 public class OfferTo {
 
-	private int id;
-	private String offertype;
+	private Long id;
+	private ActionType offertype;
 	private String sharename;
-	private BigDecimal shareprice;
+	private float shareprice;
 	private int sharequantity;
 
 	public OfferTo() {
 	}
 
-	public int getId() {
+	public OfferTo(Long id, String sharename, int sharequantity, float shareprice, ActionType offertype) {
+		this.id = id;
+		this.offertype = offertype;
+		this.sharename = sharename;
+		this.shareprice = shareprice;
+		this.sharequantity = sharequantity;
+	}
+
+	public OfferTo(ActionType offertype) {
+		this.offertype = offertype;
+	}
+
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getOffertype() {
+	public ActionType getOffertype() {
 		return this.offertype;
 	}
 
-	public void setOffertype(String offertype) {
+	public void setOffertype(ActionType offertype) {
 		this.offertype = offertype;
 	}
 
@@ -37,11 +49,11 @@ public class OfferTo {
 		this.sharename = sharename;
 	}
 
-	public BigDecimal getShareprice() {
+	public float getShareprice() {
 		return this.shareprice;
 	}
 
-	public void setShareprice(BigDecimal shareprice) {
+	public void setShareprice(float shareprice) {
 		this.shareprice = shareprice;
 	}
 

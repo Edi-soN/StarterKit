@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="StockExchangeJpa" transaction-type="RESOURCE_LOCAL">
-		<class>com.capgemini.bank.entity.Currencywallet</class>
-		<class>com.capgemini.brokerageoffice.entity.Offer</class>
-		<class>com.capgemini.brokerageoffice.entity.Sharewallet</class>
-		<class>com.capgemini.stockmarket.entity.Stockshare</class>
+		<class>com.capgemini.bank.entity.CurrencyWalletEntity</class>
+		<class>com.capgemini.brokerageoffice.entity.OfferEntity</class>
+		<class>com.capgemini.brokerageoffice.entity.ShareWalletEntity</class>
+		<class>com.capgemini.stockmarket.entity.StockShareEntity</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/stockexchange"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>

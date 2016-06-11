@@ -136,4 +136,113 @@ angular.module('app.component1').controller('MyFirstController', function($scope
         return sharedGames;
     };
 
+}).service("myServiceB", function(){
+    'use strict';
+
+    this.joinTwoStrings = function(str1, str2) {
+      return str1 + str2;
+    };
+
+    this.reverseString = function(str){
+      var = reversedString = "";
+      for (var i = str.length, i > 0; i--) {
+          reversedString += str[i-1];
+      }
+      return reversedString;
+    }
+
+    this.countCharacterOccurency = function(str, char){
+      var counter = 0;
+      for (var i = 0, len = str.length; i < len; i++) {
+        if(str[i] === char){
+          counter++;
+        }
+      }
+      return counter;
+    }
+
+    this.findCharPosition = function(str, char){
+      for (var i = 0, len = str.length; i < len; i++) {
+        if(str[i] === char){
+          return i;
+        }
+      }
+      return -1;
+    }
+
+    this.convertToCharArray = function(str){
+      var charArr = [];
+      for (var i = 0, len = str.length; i < len; i++) {
+        charArr.push(str[i-1]);
+      }
+      return charArr;
+    }
+
+    this.divideStringInHalf = function(str){
+      var dividedString = [],
+          middleIndex;
+      if(str.length % 2 === 0){
+        middleIndex = str.length / 2;
+      }
+      else{
+        middleIndex = (str.length + 1) / 2;
+      }
+      charArr.push(str.substring(0,middleIndex));
+      charArr.push(str.substring(middleIndex, str.length+1));
+      return dividedString;
+    }
+
+    this.checkIfStringsAreEqual = function(str1, str2){
+      if(str1.length === str2.length){
+        for (var i = 0, len = str1.length; i < len; i++) {
+          if(str1[i] != str2[i]){
+            return false;
+          }
+        }
+        return true;
+      }
+      return false;
+    }
+
+    this.checkIfStringContainsAnotherString = function(srcStr, destStr){
+      if(srcStr.length < destStr.length){
+        return false;
+      }
+      for(var i = 0, end = srcStr.length - destStr.length; i <= end; i++){
+        if(srcStr.substring(i, srcStr.length) === destStr){
+          return true;
+        }
+      }
+      return false;
+    }
+
+    this.reverseCase = function(str){
+      var result = "";
+      for (var i = 0, len = str.length; i < len; i++) {
+        if(str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90){
+            result+=str[i].toLowerCase();
+        }else if(str.charCodeAt(i) >=97 && str.charCodeAt(i) <= 122){
+            result+=str[i].toUpperCase();
+        }else{
+            result+=str[i];
+        }
+      }
+      return result;
+    }
+
+    this.splitBySpace = function(str){
+      var tmp = "",
+          splittedString = [];
+      for (var i = 0, len = str.length; i < len; i++) {
+        if(str[i] != " "){
+          tmp += str[i];
+        }
+        else{
+          splittedString.push(tmp);
+          tmp = "";
+        }
+      }
+      return splittedString;
+    }
+
 });
