@@ -1,5 +1,6 @@
 package com.capgemini.main;
 
+import java.sql.SQLException;
 import java.util.Calendar;
 
 import com.capgemini.simulation.Simulation;
@@ -15,7 +16,7 @@ public class Main {
 	private static final int END_YEAR = 2013;
 	
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws SQLException{
 		
 		Simulation simulation = new SimulationImpl();
 		

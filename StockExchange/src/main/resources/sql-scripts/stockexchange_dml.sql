@@ -1245,15 +1245,16 @@ INSERT INTO stockshareentity (sharename, sharedate, shareprice) VALUES
 
 -- Table: currency wallet
 
-INSERT INTO currencywalletentity (currencyname, currencyamount) VALUES ('PLN', 10000.00), ('EUR', 1250.00);
+INSERT INTO currencywalletentity (currencyname, currencyamount) VALUES ('PLN', 10000.00);
 
 
 -- Table: share wallet
 
+INSERT INTO sharewalletentity (sharename, sharequantity) VALUES ("JSW", 100);
 
 -- Table: offer
 
-
+INSERT INTO offerentity (sharename, sharequantity, shareprice, offertype) VALUES ('JSW', 10, 5.35, 'SELL');
 
 
 
