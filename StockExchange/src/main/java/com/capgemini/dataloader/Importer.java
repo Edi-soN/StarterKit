@@ -15,6 +15,7 @@ public class Importer {
 	private static final String USER = "root";
 	private static final String PASSWORD = "aramko123";
 
+	@SuppressWarnings("resource")
 	public void importDataFromCsv() throws SQLException {
 		Reader reader = new Reader();
 		Connection connection = null;
@@ -23,8 +24,19 @@ public class Importer {
 		try {
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + SCHEMA_NAME + "?user=" + USER
 					+ "&password=" + PASSWORD + "&useSSL=true");
+
 			preparedStatement = connection.prepareStatement("TRUNCATE TABLE stockshareentity");
 			preparedStatement.executeUpdate();
+			preparedStatement = connection.prepareStatement("TRUNCATE TABLE currencywalletentity");
+			preparedStatement.executeUpdate();
+			preparedStatement = connection.prepareStatement("TRUNCATE TABLE sharewalletentity");
+			preparedStatement.executeUpdate();
+			preparedStatement = connection.prepareStatement("TRUNCATE TABLE offerentity");
+			preparedStatement.executeUpdate();
+			preparedStatement = connection.prepareStatement(
+					"INSERT INTO currencywalletentity (currencyname, currencyamount) VALUES ('PLN', 10000.00), ('EUR', 1250.00);");
+			preparedStatement.executeUpdate();
+
 			String baseQuery = "INSERT INTO stockshareentity (sharename, sharedate, shareprice) VALUES ";
 			List<String> shareList = reader.getData();
 			if (shareList != null) {

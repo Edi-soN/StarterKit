@@ -3,6 +3,9 @@ package com.capgemini.main;
 import java.sql.SQLException;
 import java.util.Calendar;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.capgemini.simulation.Simulation;
 import com.capgemini.simulation.impl.SimulationImpl;
 
@@ -16,9 +19,12 @@ public class Main {
 	private static final int END_YEAR = 2013;
 	
 	
+	@SuppressWarnings("resource")
 	public static void main(String[] args) throws SQLException{
 		
-		Simulation simulation = new SimulationImpl();
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
+		
+		Simulation simulation = context.getBean(SimulationImpl.class);
 		
 		Calendar startDate = Calendar.getInstance();
 		startDate.set(START_YEAR, START_MONTH, START_DAY);

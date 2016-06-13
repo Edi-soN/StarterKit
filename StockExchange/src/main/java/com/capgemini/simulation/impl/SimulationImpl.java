@@ -6,6 +6,7 @@ import java.util.Date;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.capgemini.bank.to.CurrencyWalletTo;
 import com.capgemini.brokerageoffice.to.ShareWalletTo;
@@ -13,6 +14,7 @@ import com.capgemini.main.CustomCalendar;
 import com.capgemini.player.Player;
 import com.capgemini.simulation.Simulation;
 
+@Service
 public class SimulationImpl implements Simulation {
 
 	private static final Logger logger = LogManager.getLogger(SimulationImpl.class);
