@@ -35,9 +35,17 @@ public class BankImpl implements Bank {
 	}
 
 	@Override
-	public void exchangeCurrency(CurrencyType oldCurrency, CurrencyType newCurrency, float amount,
+	public TransactionConfirmation exchangeCurrency(CurrencyType oldCurrency, CurrencyType newCurrency, float amount,
 			ActionType offerType) {
-		// TODO
+		// TODO add CurrencyExchangeRateEntity and ExchangeRate matrix
+		CurrencyWalletEntity currencyFrom = currencyWalletRepository.findCurrencyByName(oldCurrency);
+		if (currencyFrom.getCurrencyamount() >= amount) {
+			currencyFrom.setCurrencyamount(currencyFrom.getCurrencyamount() - amount);
+			CurrencyWalletEntity currencyInto = currencyWalletRepository.findCurrencyByName(newCurrency);
+			currencyInto.setCurrencyamount(currencyInto.getCurrencyamount() + amount * calculateExchangeRate());
+			currencyWalletRepository.save(currencyInto);
+		}
+		return new TransactionConfirmation(TransactionStatus.CONFIRMED);
 	}
 
 	@Override

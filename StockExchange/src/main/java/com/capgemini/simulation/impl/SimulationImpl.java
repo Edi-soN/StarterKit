@@ -26,7 +26,7 @@ public class SimulationImpl implements Simulation {
 
 	@Override
 	public void run(Date startDate, Date endDate) {
-		showPlayerStatus();
+		showPlayerWalletsState();
 		calendar.setTime(startDate);
 		while (calendar.getTime().compareTo(endDate) <= 0) {
 			logger.debug("Date: " + calendar.getTime().toString());
@@ -35,7 +35,7 @@ public class SimulationImpl implements Simulation {
 			calendar.add(Calendar.DATE, 1);
 		}
 		logger.debug("");
-		showPlayerStatus();
+		showPlayerWalletsState();
 	}
 
 	private void playOneTurn() {
@@ -46,7 +46,7 @@ public class SimulationImpl implements Simulation {
 		CustomCalendar.setCurrentDate(date);
 	}
 
-	private void showPlayerStatus() {
+	private void showPlayerWalletsState() {
 		logger.debug("Player shares");
 		logger.debug("Share name" + "\t" + "Share quantity");
 		if (player.showAllWalletShares() == null || player.showAllWalletShares().size() == 0) {

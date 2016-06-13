@@ -11,7 +11,7 @@ public interface Bank {
 
 	public List<CurrencyWalletTo> showPlayerFunds();
 
-	public void exchangeCurrency(CurrencyType oldCurrency, CurrencyType newCurrency, float amount, ActionType offerType);
+	public TransactionConfirmation exchangeCurrency(CurrencyType oldCurrency, CurrencyType newCurrency, float amount, ActionType offerType);
 	
 	public TransactionConfirmation makeTransaction(CurrencyType currencyName, float amount, int bankAccountNumber);
 	

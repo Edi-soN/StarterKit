@@ -50,7 +50,7 @@ DROP TABLE IF EXISTS offerentity;
 
 CREATE TABLE offerentity(
   id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  sharename varchar(50) NOT NULL UNIQUE,
+  sharename varchar(50) NOT NULL,
   sharequantity int(10) NOT NULL,
   shareprice numeric(15,2) NOT NULL,  
   offertype enum('BUY', 'SELL') NOT NULL,
